@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj": {}
+    "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj": {}
   },
   "projects": {
-    "D:\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj": {
+    "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
+        "projectUniqueName": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
         "projectName": "QUANLYRAPCHIEUPHIM",
-        "projectPath": "D:\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
+        "projectPath": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
         "packagesPath": "C:\\Users\\Minh Tuan\\.nuget\\packages\\",
-        "outputPath": "D:\\QUANLYRAPCHIEUPHIM\\obj\\",
+        "outputPath": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Minh Tuan\\AppData\\Roaming\\NuGet\\NuGet.Config",

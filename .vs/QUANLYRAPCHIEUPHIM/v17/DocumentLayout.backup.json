@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|c:\\users\\minh tuan\\downloads\\quanlyrapchieuphim\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|c:\\users\\minh tuan\\downloads\\quanlyrapchieuphim\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|c:\\users\\minh tuan\\downloads\\quanlyrapchieuphim\\quanlyrapchieuphim.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|solutionrelative:quanlyrapchieuphim.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|c:\\users\\minh tuan\\downloads\\quanlyrapchieuphim\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|c:\\users\\minh tuan\\downloads\\quanlyrapchieuphim\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|c:\\users\\minh tuan\\downloads\\quanlyrapchieuphim\\quanlyrapchieuphim.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B37311B6-EAA5-4E6B-94DF-709F23DD8880}|QUANLYRAPCHIEUPHIM.csproj|solutionrelative:quanlyrapchieuphim.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T07:18:28.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T07:15:17.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QUANLYRAPCHIEUPHIM",
+              "DocumentMoniker": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
+              "RelativeDocumentMoniker": "QUANLYRAPCHIEUPHIM.csproj",
+              "ToolTip": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
+              "RelativeToolTip": "QUANLYRAPCHIEUPHIM.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-23T07:15:10.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-23T07:15:08.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-23T07:15:03.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QUANLYRAPCHIEUPHIM",
+              "DocumentMoniker": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
+              "RelativeDocumentMoniker": "QUANLYRAPCHIEUPHIM.csproj",
+              "ToolTip": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
+              "RelativeToolTip": "QUANLYRAPCHIEUPHIM.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-23T07:14:47.951Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
