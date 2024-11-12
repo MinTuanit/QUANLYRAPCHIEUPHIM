@@ -99,19 +99,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Minh Tuan\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
+      "projectUniqueName": "D:\\UIT\\CNPMCS\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
       "projectName": "QUANLYRAPCHIEUPHIM",
-      "projectPath": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
-      "packagesPath": "C:\\Users\\Minh Tuan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Minh Tuan\\Downloads\\QUANLYRAPCHIEUPHIM\\obj\\",
+      "projectPath": "D:\\UIT\\CNPMCS\\QUANLYRAPCHIEUPHIM\\QUANLYRAPCHIEUPHIM.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\UIT\\CNPMCS\\QUANLYRAPCHIEUPHIM\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Minh Tuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -167,7 +167,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
