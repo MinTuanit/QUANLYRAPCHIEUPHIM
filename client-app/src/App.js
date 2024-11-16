@@ -1,6 +1,9 @@
 import React from "react";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
+import Employees from "./components/Employees";
+import Receipts from "./components/Receipts";
+import Products from "./components/Products";
 import NavSelection from "./components/NavSelection";
 import ProfileImg from "./assets/images/profile.png";
 import HomeImg from "./assets/images/home.svg";
@@ -12,6 +15,7 @@ import ReceiptsImg from "./assets/images/receipts.svg";
 import SettingsImg from "./assets/images/settings.svg";
 
 
+
 function App() {
   return (
     <div className="App bg-dark-gray min-h-screen w-full">
@@ -20,7 +24,7 @@ function App() {
         ProfileRole={"Admin"}
         ProfilePic={ProfileImg}
         />
-      <div className="main-layout">
+      <div className="main-layout flex flex-1">
         <NavBar
           topChildren={[
             <NavSelection icon={HomeImg} title="Home" />,
@@ -35,8 +39,8 @@ function App() {
             <NavSelection icon={SettingsImg} title="Settings" />,
           ]}
         />
-        <div className="content">
-          {/* Content goes here */}
+        <div className="content flex-1 mx-12 my-4 overflow-auto">
+          <Employees />
         </div>
       </div>
     </div>

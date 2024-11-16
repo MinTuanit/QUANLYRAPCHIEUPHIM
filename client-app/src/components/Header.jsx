@@ -24,13 +24,13 @@ function Header({ProfileName, ProfileRole, ProfilePic, className}) {
       <div className="border-l border-line-gray absolute left-60 h-70" />
       <div className="flex items-center ml-auto pr-10 space-x-4">
         <div className="space-x-4 mr-6">
-          <button className="header-calendar" onClick={handleCalendarClick}>
+          <button className="header-calendar hover:transform hover:-translate-y-1 transition-transform duration-200" onClick={handleCalendarClick}>
             <img className="size-6" src={CalendarImg} alt="Calendar" />
           </button>
-          <button className="header-message" onClick={handleMessageClick}>
+          <button className="header-message hover:transform hover:-translate-y-1 transition-transform duration-200" onClick={handleMessageClick}>
             <img className="size-6" src={MessageImg} alt="Message" />
           </button>
-          <button className="header-notification" onClick={handleNotificationClick}>
+          <button className="header-notification hover:transform hover:-translate-y-1 transition-transform duration-200" onClick={handleNotificationClick}>
             <img className="size-6" src={NotificationImg} alt="Notification" />
           </button>
         </div>
@@ -41,7 +41,7 @@ function Header({ProfileName, ProfileRole, ProfilePic, className}) {
           </div>
         </div>
         <img className="profile-pic size-10 rounded-full" src={ProfilePic} />
-        <button className="arrow-down" onClick={handleArrowDownClick}>
+        <button className="arrow-down hover:transform hover:-translate-y-1 transition-transform duration-200" onClick={handleArrowDownClick}>
             <img src={ArrowDownImg} alt="Arrow Down" />
         </button>
       </div>

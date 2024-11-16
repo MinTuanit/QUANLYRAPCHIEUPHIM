@@ -17,7 +17,7 @@
   left: -16px;
   right: -16px;
   bottom: 0px;
-  background-color: #DADADA;
+  background-color: #dadada;
   border-radius: 10px;
   z-index: 0;
   opacity: 0;
@@ -28,11 +28,44 @@
   opacity: 0.2;
 }
 .nav-selection:hover img {
-    filter: brightness(150%);
+  filter: brightness(150%);
 }
 
 .nav-selection:hover span {
-    color: #DADADA;
+  color: #dadada;
 }
 
+.hover\:filter-hover:hover {
+  filter: invert(10%) sepia(88%) saturate(6604%) hue-rotate(352deg)
+    brightness(73%) contrast(105%);
+}
 
+.tab {
+  padding: 0.5rem 1rem;
+  width: 152px;
+  height: 36px;
+  background-color: black;
+  font-weight: normal;
+  font-size: 14px;
+  color: #dadada;
+  border: 3px solid #484848;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  cursor: pointer;
+}
+
+.tab span {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.tab:hover span{
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  border-bottom: none;
+  font-weight: 500;
+  color: #fff;
+}
