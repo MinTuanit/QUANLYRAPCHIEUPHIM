@@ -42,7 +42,6 @@
 
 .tab {
   padding: 0.5rem 1rem;
-  width: 152px;
   height: 36px;
   background-color: black;
   font-weight: normal;
@@ -52,6 +51,14 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   cursor: pointer;
+}
+
+.movie-tabs .tab {
+  width: 132px;
+}
+
+.product-tab2 .tab {
+  width: 152px;
 }
 
 .tab span {
@@ -68,4 +75,20 @@
   border-bottom: none;
   font-weight: 500;
   color: #fff;
+}
+
+.product {
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+}
+
+.movie {
+  transition: transform 0.2s;
+}
+
+.movie:hover {
+  transform: translateY(-6px);
 }

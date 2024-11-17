@@ -1,12 +1,12 @@
 import { useState } from "react";
-import SmallPopImg from "../assets/images/smallpop.svg";
-import LargePopImg from "../assets/images/bigpop.svg";
-import CokeImg from "../assets/images/coke.svg";
-import LaysImg from "../assets/images/lays.svg";
-import WaterImg from "../assets/images/water.svg";
-import SpriteImg from "../assets/images/sprite.svg";
-import Combo1Img from "../assets/images/combo1.svg";
-import Combo2Img from "../assets/images/combo2.svg";
+import SmallPopImg from "../assets/images/examples/smallpop.svg";
+import LargePopImg from "../assets/images/examples/bigpop.svg";
+import CokeImg from "../assets/images/examples/coke.svg";
+import LaysImg from "../assets/images/examples/lays.svg";
+import WaterImg from "../assets/images/examples/water.svg";
+import SpriteImg from "../assets/images/examples/sprite.svg";
+import Combo1Img from "../assets/images/examples/combo1.svg";
+import Combo2Img from "../assets/images/examples/combo2.svg";
 import Product from "./items/Product";
 import SearchImg from "../assets/images/search.svg";
 
@@ -83,7 +83,7 @@ function Products() {
   return (
     <div className="products flex flex-col h-full">
       <div className="text-40px font-medium text-light-gray">Products</div>
-      <div className="flex mt-4 z-20 text-light-gray">
+      <div className="product-tabs flex mt-4 z-20 text-light-gray">
         <button
           className={`tab ${activeTab === "All" ? "active" : ""}`}
           onClick={() => handleTabClick("All")}
