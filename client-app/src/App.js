@@ -5,6 +5,7 @@ import Employees from "./components/Employees";
 import Receipts from "./components/Receipts";
 import Products from "./components/Products";
 import Movies from "./components/Movies";
+import Theaters from "./components/Theaters"; 
 import NavSelection from "./components/NavSelection";
 import ProfileImg from "./assets/images/profile.png";
 import HomeImg from "./assets/images/home.svg";
@@ -41,7 +42,7 @@ function App() {
           ]}
         />
         <div className="content flex-1 mx-12 my-4 overflow-auto">
-          <Movies />
+          <Theaters />
         </div>
       </div>
     </div>

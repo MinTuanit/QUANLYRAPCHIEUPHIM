@@ -54,10 +54,10 @@
 }
 
 .movie-tabs .tab {
-  width: 132px;
+  width  : 132px;
 }
 
-.product-tab2 .tab {
+.product-tabs .tab {
   width: 152px;
 }
 
@@ -91,4 +91,23 @@
 
 .movie:hover {
   transform: translateY(-6px);
+}
+
+.movie-playing {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.info-button {
+  transition: filter 0.2s ease;;
+}
+
+.info-button:hover {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(15%) saturate(13%) hue-rotate(353deg) brightness(106%) contrast(95%);;
 }

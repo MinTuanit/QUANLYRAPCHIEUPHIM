@@ -9,6 +9,7 @@ import Combo1Img from "../assets/images/examples/combo1.svg";
 import Combo2Img from "../assets/images/examples/combo2.svg";
 import Product from "./items/Product";
 import SearchImg from "../assets/images/search.svg";
+import addImg from "../assets/images/add.svg";
 
 const exampleProducts = [
   {
@@ -71,13 +72,23 @@ function Products() {
     setActiveTab(tab);
   };
 
+  const handleAddNewClick = () => {
+    alert("Add New Btn clicked");
+  };
+
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const filteredProducts = exampleProducts.filter((product) => {
-    const matchesTab = activeTab === "All" || (activeTab === "Others" ? product.type !== "Food and Drinks" && product.type !== "Souvenirs" : product.type === activeTab);
-    const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesTab =
+      activeTab === "All" ||
+      (activeTab === "Others"
+        ? product.type !== "Food and Drinks" && product.type !== "Souvenirs"
+        : product.type === activeTab);
+    const matchesSearch = product.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     return matchesTab && matchesSearch;
   });
   return (
@@ -129,6 +140,12 @@ function Products() {
             <Product key={index} {...product} />
           ))}
         </div>
+        <button
+          className="fixed bottom-10 right-16 size-11 rounded-2xl bg-red hover:bg-dark-red duration-200"
+          onClick={handleAddNewClick}
+        >
+          <img className="size-11" src={addImg} alt="Add New" />
+        </button>
       </div>
     </div>
   );

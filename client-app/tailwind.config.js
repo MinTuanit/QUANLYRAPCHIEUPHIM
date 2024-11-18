@@ -24,6 +24,7 @@ module.exports = {
         "light-gray": "#DADADA",
         "gray": "#999999",
         "red": "#B80007",
+        "dark-red": "#7A0005",
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

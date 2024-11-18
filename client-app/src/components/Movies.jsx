@@ -12,7 +12,7 @@ import shangchiMovieImg from "../assets/images/examples/shangchiMovie.svg";
 import notimeMovieImg from "../assets/images/examples/notimeMovie.svg";
 import SearchImg from "../assets/images/search.svg";
 import CalendarImg from "../assets/images/calendar.svg";
-
+import addImg from "../assets/images/add.svg";
 
 const exampleMovies = [
   {
@@ -84,6 +84,10 @@ function Movies() {
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
+  };
+
+  const handleAddNewClick = () => {
+    alert("Add New Btn clicked");
   };
 
   const handleDateChange = (event) => {
@@ -173,6 +177,12 @@ function Movies() {
             <Movie key={index} {...movie} />
           ))}
         </div>
+        <button
+          className="fixed bottom-10 right-16 size-11 rounded-2xl bg-red hover:bg-dark-red duration-200"
+          onClick={handleAddNewClick}
+        >
+          <img className="size-11" src={addImg} alt="Add New" />
+        </button>
       </div>
     </div>
   );

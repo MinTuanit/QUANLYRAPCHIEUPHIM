@@ -141,13 +141,13 @@ function Employees() {
           />
         </div>
         <button
-          className="DeleteBtn mt-4 ml-auto w-[114px] h-8 border-2 border-red text-red rounded-md items-center justify-center font-medium tracking-widest hover:transform hover:-translate-y-1 transition-transform duration-200"
+          className="DeleteBtn mt-4 ml-auto w-[114px] h-8 border-2 border-red text-red rounded-md items-center justify-center font-medium tracking-widest hover:bg-[#380005] duration-200"
           onClick={handleDeleteClick}
         >
           Delete
         </button>
         <button
-          className="AddNewBtn mt-4 ml-5 w-[114px] h-8 border-2 border-red bg-red text-black rounded-md items-center justify-center font-medium tracking-widest hover:transform hover:-translate-y-1 transition-transform duration-200"
+          className="AddNewBtn mt-4 ml-5 w-[114px] h-8 border-2 border-red bg-red text-black rounded-md items-center justify-center font-medium tracking-widest hover:bg-dark-red hover:border-dark-red duration-200"
           onClick={handleAddNewClick}
         >
           Add New
@@ -170,17 +170,16 @@ function Employees() {
         <div className="h-[45px] mb-[45px] ml-[10px] mr-[10px] bg-dark-gray" />
         <div className="-mt-[450px] text-base">
           {filteredEmployees.map((employee) => (
-          <Employee
-            key={employee.Id}
-            Id={employee.Id}
-            name={employee.name}
-            position={employee.position}
-            shift={employee.shift}
-            payday={employee.payday}
-          />
-        ))}
+            <Employee
+              key={employee.Id}
+              Id={employee.Id}
+              name={employee.name}
+              position={employee.position}
+              shift={employee.shift}
+              payday={employee.payday}
+            />
+          ))}
         </div>
-        
       </div>
     </div>
   );
