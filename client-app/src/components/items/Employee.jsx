@@ -2,7 +2,7 @@ import React from "react";
 import DeleteImg from "../../assets/images/delete.svg";
 import InfoImg from "../../assets/images/info.svg";
 
-function Employee({ Id, name, position, shift, payday }) {
+function Employee({ Id, name, position, shift, birth }) {
   const handleDeleteClick = () => {
     alert("Delete Btn clicked");
   };
@@ -18,7 +18,7 @@ function Employee({ Id, name, position, shift, payday }) {
       <p className="text-sm font-normal">{name}</p>
       <p className="text-sm font-normal">{position}</p>
       <p className="text-sm font-normal">{shift}</p>
-      <p className="text-sm font-normal">{payday}</p>
+      <p className="text-sm font-normal">{birth}</p>
       <div className="flex flex-row">
         <button className="info-btn hover:transform hover:-translate-y-1 transition-transform duration-200" onClick={handleInfoClick}>
         <img

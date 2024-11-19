@@ -111,3 +111,50 @@
 .info-button:hover {
   filter: brightness(0) saturate(100%) invert(17%) sepia(15%) saturate(13%) hue-rotate(353deg) brightness(106%) contrast(95%);;
 }
+
+.pagination-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page-number-btn {
+  margin: 0 3px;
+  width: 24px;
+  height: 24px;
+  color: #999999;
+  border-radius: 12px;
+  background-color: transparent;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.page-number-btn:hover {
+  color: #7A0005;
+}
+
+.page-number-btn.active {
+  background-color: #7A0005;
+  color: black;
+}
+
+.pagination-btn::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -10px;
+  right: -10px;
+  bottom: -4px;
+  background-color: white;
+  border-radius: 16px;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pagination-btn:hover::before {
+  opacity: 0.2;
+}
+
+.pagination-btn:hover {
+  color: #DADADA;
+}

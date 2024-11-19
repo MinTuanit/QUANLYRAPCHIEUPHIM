@@ -765,6 +765,10 @@ video {
   height: 45px;
 }
 
+.h-\[46px\] {
+  height: 46px;
+}
+
 .h-\[54\%\] {
   height: 54%;
 }
@@ -1099,8 +1103,16 @@ video {
   padding-left: 2.5rem;
 }
 
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
 .pl-3 {
   padding-left: 0.75rem;
+}
+
+.pl-\[28px\] {
+  padding-left: 28px;
 }
 
 .pr-10 {
@@ -1266,6 +1278,42 @@ video {
 
 * {
   font-family: "Inter", sans-serif;
+}
+
+.nav-selection {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-selection::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -16px;
+  right: 16px;
+  bottom: 0px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-selection:hover::before {
+  opacity: 0.2;
+}
+
+.nav-selection:hover img {
+  filter: brightness(150%);
+}
+
+.nav-selection:hover span {
+  color: #dadada;
+}
+
+.hover\:filter-hover:hover {
+  filter: invert(10%) sepia(88%) saturate(6604%) hue-rotate(352deg)
+    brightness(73%) contrast(105%);
 }
 
 .tab {
