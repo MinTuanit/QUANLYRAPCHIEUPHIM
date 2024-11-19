@@ -64,6 +64,66 @@ const exampleTheaters = [
     capacity: "200",
     playing: "No Time To Die",
   },
+  {
+    id: "T01",
+    status: "Ready",
+    capacity: "150",
+    playing: "Shang-Chi: The Legend of the Ten Rings",
+  },
+  {
+    id: "T02",
+    status: "Ready",
+    capacity: "200",
+    playing: "Joker",
+  },
+  {
+    id: "T03",
+    status: "Playing",
+    capacity: "150",
+    playing: "Shang-Chi: The Legend of the Ten Rings",
+  },
+  {
+    id: "T04",
+    status: "Repairing",
+    capacity: "100",
+    playing: "none",
+  },
+  {
+    id: "T05",
+    status: "Playing",
+    capacity: "200",
+    playing: "No Time To Die",
+  },
+  {
+    id: "T06",
+    status: "Ready",
+    capacity: "150",
+    playing: "Shang-Chi: The Legend of the Ten Rings",
+  },
+  {
+    id: "T07",
+    status: "Ready",
+    capacity: "200",
+    playing: "Joker",
+  },
+  {
+    id: "T08",
+    status: "Playing",
+    capacity: "150",
+    playing: "Shang-Chi: The Legend of the Ten Rings",
+  },
+  {
+    id: "T09",
+    status: "Repairing",
+    capacity: "100",
+    playing: "none",
+  },
+  {
+    id: "T10",
+    status: "Playing",
+    capacity: "200",
+    playing: "No Time To Die",
+  },
 ];
 
 function Theaters() {
@@ -116,8 +176,8 @@ function Theaters() {
         </button>
       </div>
 
-      <div className="content mt-[14px] w-full h-full bg-black border-[3px] border-line-gray rounded-xl py-8 px-12 overflow-auto">
-        <div className="grid grid-cols-5 gap-x-6 gap-y-8">
+      <div className="content mt-[14px] w-full h-full bg-black border-[3px] border-line-gray rounded-xl pl-12 py-6 pr-4 overflow-auto">
+        <div className="list grid grid-cols-5 gap-x-6 gap-y-8 max-h-[490px] py-3 overflow-y-auto">
           {filteredTheaters.map((theater, index) => (
             <Theater key={index} {...theater} />
           ))}

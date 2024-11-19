@@ -158,3 +158,21 @@
 .pagination-btn:hover {
   color: #DADADA;
 }
+
+.list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: #320000;
+  border-radius: 10px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #5f0000;
+  border-radius: 10px;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #7f0101;
+}

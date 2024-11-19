@@ -62,6 +62,56 @@ const exampleProducts = [
     price: "$20.00",
     type: "Combo",
   },
+  {
+    icon: SmallPopImg,
+    title: "Small Popcorn 20Oz",
+    price: "$5.00",
+    type: "Food and Drinks",
+  },
+  {
+    icon: LargePopImg,
+    title: "Large Popcorn 35Oz",
+    price: "$10.00",
+    type: "Food and Drinks",
+  },
+  {
+    icon: CokeImg,
+    title: "Coke 20Oz",
+    price: "$5.00",
+    type: "Souvenirs",
+  },
+  {
+    icon: LaysImg,
+    title: "Lays 30Oz",
+    price: "$3.00",
+    type: "Food and Drinks",
+  },
+  {
+    icon: WaterImg,
+    title: "Water 20Oz",
+    price: "$2.00",
+    type: "Souvenirs",
+  },
+  {
+    icon: SpriteImg,
+    title: "Sprite 20Oz",
+    price: "$5.00",
+    type: "Souvenirs",
+  },
+  {
+    icon: Combo1Img,
+    title: "Combo 1",
+    description: "Popcorn + Coke",
+    price: "$15.00",
+    type: "Combo",
+  },
+  {
+    icon: Combo2Img,
+    title: "Combo 2",
+    description: "2 Popcorn + 2 Coke",
+    price: "$20.00",
+    type: "Combo",
+  },
 ];
 
 function Products() {
@@ -134,8 +184,8 @@ function Products() {
           />
         </div>
       </div>
-      <div className="content -mt-[2px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none p-12 overflow-auto">
-        <div className="grid grid-cols-7 gap-2">
+      <div className="content -mt-[2px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none pl-12 py-6 pr-4 overflow-auto">
+        <div className="list grid grid-cols-7 gap-2 max-h-[510px] py-3 overflow-y-auto">
           {filteredProducts.map((product, index) => (
             <Product key={index} {...product} />
           ))}

@@ -74,6 +74,65 @@ const exampleMovies = [
     name: "No Time To Die",
     year: "2021",
     status: "Now Playing",
+  },{
+    poster: agentMovieImg,
+    name: "Agent",
+    year: "2021",
+    status: "Unknown",
+  },
+  {
+    poster: avatarMovieImg,
+    name: "Avatar",
+    year: "2009",
+    status: "Coming Soon",
+  },
+  {
+    poster: jokerMovieImg,
+    name: "Joker",
+    year: "2019",
+    status: "Now Playing",
+  },
+  {
+    poster: endgameMovieImg,
+    name: "Avengers: Endgame",
+    year: "2019",
+    status: "Now Playing",
+  },
+  {
+    poster: screamMovieImg,
+    name: "Scream",
+    year: "2022",
+    status: "Coming Soon",
+  },
+  {
+    poster: titanicMovieImg,
+    name: "Titanic",
+    year: "1997",
+    status: "Stopped",
+  },
+  {
+    poster: barbieMovieImg,
+    name: "Barbie",
+    year: "2023",
+    status: "Coming Soon",
+  },
+  {
+    poster: batmanMovieImg,
+    name: "Batman",
+    year: "2022",
+    status: "Now Playing",
+  },
+  {
+    poster: shangchiMovieImg,
+    name: "Shang-Chi: The Legend of the Ten Rings",
+    year: "2021",
+    status: "Now Playing",
+  },
+  {
+    poster: notimeMovieImg,
+    name: "No Time To Die",
+    year: "2021",
+    status: "Now Playing",
   },
 ];
 
@@ -171,8 +230,8 @@ function Movies() {
           />
         </div>
       </div>
-      <div className="content -mt-[2px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none p-12 overflow-auto">
-        <div className="grid grid-cols-6 gap-y-8">
+      <div className="content flex -mt-[2px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none pl-12 py-6 pr-4 overflow-auto">
+        <div className="list flex-1 grid grid-cols-6 gap-y-8 max-h-[510px] py-3 overflow-y-auto">
           {filteredMovies.map((movie, index) => (
             <Movie key={index} {...movie} />
           ))}
