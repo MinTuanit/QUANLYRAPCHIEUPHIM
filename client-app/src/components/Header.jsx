@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.svg";
 import NotificationImg from "../assets/images/notification.svg";
 import MessageImg from "../assets/images/messageQuestion.svg";
@@ -20,7 +21,9 @@ function Header({ProfileName, ProfileRole, ProfilePic, className}) {
   };
   return (
     <header className={`header bg-black w-full h-70 flex items-center p-4 border-b border-line-gray ${className}`}>
-      <img className="logo pl-3" src={logo} alt="Clinic logo" />
+      <Link to="/" className="logo pl-3">
+        <img src={logo} alt="Clinic logo" />
+      </Link>
       <div className="border-l border-line-gray absolute left-60 h-70" />
       <div className="flex items-center ml-auto pr-10 space-x-4">
         <div className="space-x-4 mr-6">

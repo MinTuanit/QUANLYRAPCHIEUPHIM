@@ -1,21 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function NavSelection({ icon, title, onClick }) {
-  const handleClick = () => {
-    alert(`You clicked on ${title}`);
-    if (onClick) {
-      onClick();
-    }
-  };
-
+function NavSelection({ icon, title, to }) {
   return (
-    <button
-      className="nav-selection w-184 h-46 flex items-center transition-transform duration-50"
-      onClick={handleClick}
-    >
-      <img className="size-6" src={icon} alt="Selection icon" />
-      <span className="text-gray font-medium ml-3.5 hover:text-light-gray">{title}</span>
-    </button>
+    <Link to={to} className="nav-selection w-46 h-[46px] flex items-center space-x-2 p-2 hover:bg-gray-700 rounded-md">
+      <img src={icon} alt={title} className="w-6 h-6" />
+      <span className="text-gray font-medium pl-2">{title}</span>
+    </Link>
   );
 }
 

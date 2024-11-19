@@ -628,10 +628,6 @@ video {
   margin-left: 0.5rem;
 }
 
-.ml-3\.5 {
-  margin-left: 0.875rem;
-}
-
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -711,10 +707,6 @@ video {
 
 .h-4 {
   height: 1rem;
-}
-
-.h-46 {
-  height: 46px;
 }
 
 .h-6 {
@@ -932,6 +924,12 @@ video {
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -1270,42 +1268,6 @@ video {
   font-family: "Inter", sans-serif;
 }
 
-.nav-selection {
-  position: relative;
-  z-index: 1;
-}
-
-.nav-selection::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: -16px;
-  right: -16px;
-  bottom: 0px;
-  background-color: #dadada;
-  border-radius: 10px;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.nav-selection:hover::before {
-  opacity: 0.2;
-}
-
-.nav-selection:hover img {
-  filter: brightness(150%);
-}
-
-.nav-selection:hover span {
-  color: #dadada;
-}
-
-.hover\:filter-hover:hover {
-  filter: invert(10%) sepia(88%) saturate(6604%) hue-rotate(352deg)
-    brightness(73%) contrast(105%);
-}
-
 .tab {
   padding: 0.5rem 1rem;
   height: 36px;
@@ -1405,11 +1367,6 @@ video {
 .hover\:bg-dark-red:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(122 0 5 / var(--tw-bg-opacity));
-}
-
-.hover\:text-light-gray:hover {
-  --tw-text-opacity: 1;
-  color: rgb(218 218 218 / var(--tw-text-opacity));
 }
 
 .hover\:text-red:hover {
