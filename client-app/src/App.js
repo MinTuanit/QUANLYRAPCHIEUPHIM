@@ -1,5 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+} from "react-router-dom";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -18,11 +23,22 @@ import ProductsImg from "./assets/images/products.svg";
 import TheatersImg from "./assets/images/theaters.svg";
 import ReceiptsImg from "./assets/images/receipts.svg";
 import SettingsImg from "./assets/images/settings.svg";
+import Login from "./components/Login";
 
 function App() {
+  const [isPopUpVisible, setIsPopUpVisible] = useState(false);
+
+  const handleOpenPopUpClick = () => {
+    setIsPopUpVisible(true);
+  };
+
+  const handleClosePopUpClick = () => {
+    setIsPopUpVisible(false);
+  };
+
   return (
     <Router>
-      <div className="App bg-dark-gray min-h-screen w-full">
+      <div className="App bg-dark-gray min-h-screen w-full relative">
         <Header
           ProfileName={"Nguyen Van A"}
           ProfileRole={"Admin"}
@@ -32,21 +48,41 @@ function App() {
           <NavBar
             topChildren={[
               <NavSelection icon={HomeImg} title="Home" to="/" />,
-              <NavSelection icon={EmployeesImg} title="Employees" to="/employees" />,
+              <NavSelection
+                icon={EmployeesImg}
+                title="Employees"
+                to="/employees"
+              />,
               <NavSelection icon={MoviesImg} title="Movies" to="/movies" />,
-              <NavSelection icon={ProductsImg} title="Products" to="/products" />,
-              <NavSelection icon={TheatersImg} title="Theaters" to="/theaters" />,
-              <NavSelection icon={ReceiptsImg} title="Receipts" to="/receipts" />,
+              <NavSelection
+                icon={ProductsImg}
+                title="Products"
+                to="/products"
+              />,
+              <NavSelection
+                icon={TheatersImg}
+                title="Theaters"
+                to="/theaters"
+              />,
+              <NavSelection
+                icon={ReceiptsImg}
+                title="Receipts"
+                to="/receipts"
+              />,
             ]}
             notificationChildren={<div>Notification Content</div>}
             botChildren={[
-              <NavSelection icon={SettingsImg} title="Settings" to="/settings"/>
+              <NavSelection
+                icon={SettingsImg}
+                title="Settings"
+                to="/settings"
+              />,
             ]}
           />
           <div className="content flex-1 mx-12 my-4 overflow-auto">
             <Routes>
-              <Route path="/" element={<Home />}/>
-              <Route path="/employees" element={<Employees />} /> 
+              <Route path="/" element={<Home />} />
+              <Route path="/employees" element={<Employees />} />
               <Route path="/movies" element={<Movies />} />
               <Route path="/products" element={<Products />} />
               <Route path="/theaters" element={<Theaters />} />
@@ -54,7 +90,23 @@ function App() {
               <Route path="/settings" element={<Settings />} />
             </Routes>
           </div>
+          <div
+            className="fixed top-[3%] left-[20%] bg-line-gray text-white"
+            onClick={handleOpenPopUpClick}
+          >
+            Open Login
+          </div>
         </div>
+        {isPopUpVisible && (
+          <>
+            <div className="overlay"></div>
+            <Login
+              className="login-modal"
+              handleCloseClick={handleClosePopUpClick}
+              handleLoginClick={handleClosePopUpClick}
+            />
+          </>
+        )}
       </div>
     </Router>
   );
