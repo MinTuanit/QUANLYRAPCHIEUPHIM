@@ -23,6 +23,8 @@ module.exports = {
         "dark-gray": "#101010",
         "light-gray": "#DADADA",
         "gray": "#999999",
+        "red": "#B80007",
+        "dark-red": "#7A0005",
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -30,6 +32,7 @@ module.exports = {
       fontSize: {
         '14px': '14px',
         '10px': '10px',
+        '40px': '40px',
       },
       
     },
