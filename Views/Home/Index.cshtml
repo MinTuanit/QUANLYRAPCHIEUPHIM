@@ -2,6 +2,70 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
+<Router>
+    <div className="App bg-dark-gray min-h-screen w-full relative">
+        <Header ProfileName={"Nguyen Van A"}
+                ProfileRole={"Admin"}
+                ProfilePic={ProfileImg} />
+        <div className="main-layout flex flex-1">
+            <NavBar topChildren={[
+              <NavSelection icon={HomeImg} title="Home" to="/" />,
+              <NavSelection
+                icon={EmployeesImg}
+                title="Employees"
+                to="/employees"
+              />,
+              <NavSelection icon={MoviesImg} title="Movies" to="/movies" />,
+              <NavSelection
+                icon={ProductsImg}
+                title="Products"
+                to="/products"
+              />,
+              <NavSelection
+                icon={TheatersImg}
+                title="Theaters"
+                to="/theaters"
+              />,
+              <NavSelection
+                icon={ReceiptsImg}
+                title="Receipts"
+                to="/receipts"
+              />,
+            ]}
+            notificationChildren={<div>Notification Content</div>}
+            botChildren={[
+              <NavSelection
+                icon={SettingsImg}
+                title="Settings"
+                to="/settings"
+              />,
+            ]}
+          />
+          <div className="content flex-1 mx-12 my-4 overflow-auto">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/employees" element={<Employees />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/theaters" element={<Theaters />} />
+              <Route path="/receipts" element={<Receipts />} />
+              <Route path="/settings" element={<Settings />} />
+            </Routes>
+          </div>
+          <div
+            className="fixed top-[3%] left-[20%] bg-line-gray text-white"
+            onClick={handleOpenPopUpClick}
+          >
+            Open Login
+          </div>
+        </div>
+        {isPopUpVisible && (
+        <>
+        <div className="overlay"></div>
+        <Login className="login-modal"
+               handleCloseClick={handleClosePopUpClick}
+               handleLoginClick={handleClosePopUpClick} />
+        </>
+        )}
+    </div>
+</Router>
