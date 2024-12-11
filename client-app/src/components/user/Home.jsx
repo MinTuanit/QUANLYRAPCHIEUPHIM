@@ -33,7 +33,7 @@ function UserHome() {
     <div className="bg-black min-h-screen w-full h-[1500px] relative">
       <div className="absolute top-0 left-0 w-full">
         <div
-          className="absolute top-0 left-0 w-full h-[200px] z-20"
+          className="absolute top-0 left-0 w-full h-[200px] z-10"
           style={{
             background:
               "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7))",
@@ -45,7 +45,7 @@ function UserHome() {
           autoPlay
           loop
           muted={isMuted}
-          className="absolute top-0 left-0 w-full h-[630px] object-cover"
+          className="absolute top-0 left-0 w-full h-[580px] object-cover z-0"
         >
           <source src={backgroundVideo} type="video/mp4" />
           <span className="text-white">
@@ -54,7 +54,7 @@ function UserHome() {
         </video>
 
         /* Title and Play Button */
-        <div className="absolute top-[220px] left-[4%] w-[40%] h-[290px] flex flex-col">
+        <div className="absolute top-[200px] left-[4%] w-[40%] h-[290px] flex flex-col z-20">
           <div className="text-white text-5xl font-bold whitespace-nowrap">
             {demoMovie.title}
           </div>
@@ -68,7 +68,7 @@ function UserHome() {
         
         <button
           onClick={toggleMute}
-          className="absolute top-[570px] right-12 border-gray border-2 bg-[rgba(0,0,0,0.2)] rounded-full z-30 p-2"
+          className="absolute top-[520px] right-12 border-gray border-2 bg-[rgba(0,0,0,0.2)] rounded-full z-30 p-2"
         >
           <img
             src={isMuted ? MuteImg : UnmuteImg}
@@ -77,19 +77,19 @@ function UserHome() {
           />
         </button>
         <div
-          className="absolute top-[430px] left-0 w-full h-[200px] z-20"
+          className="absolute top-[380px] left-0 w-full h-[200px] z-10"
           style={{
             background:
               "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))",
           }}
         />
-        <div className="space-y-12 pt-[640px] px-5 z-10">
+        <div className="absolute space-y-12 w-full top-[550px] px-5 z-30">
           <MovieSlide title="New movies" />
           <MovieSlide title="Popular movies" />
           <MovieSlide title="Trending movies" />
         </div>
       </div>
-      <Footer className="absolute bottom-0 left-0 w-full mt-10" />
+      <Footer className="absolute bottom-0 left-0 w-full" />
     </div>
   );
 }
