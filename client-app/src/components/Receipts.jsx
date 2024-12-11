@@ -287,16 +287,21 @@ function Receipts() {
       currentPage - Math.floor(pageRangeDisplayed / 2)
     );
     const endPage = Math.min(totalPages, startPage + pageRangeDisplayed - 1);
-
-    for (let i = startPage; i <= endPage; i++) {
+    let i;
+    for (i = startPage; i <= endPage; i++) {
       pageNumbers.push(i);
     }
-
+    if (pageNumbers.length < pageRangeDisplayed && pageRangeDisplayed < totalPages) {
+      if (startPage > 1)
+        pageNumbers.unshift("...");
+      else if (endPage < totalPages)
+        pageNumbers.push("...");
+    }
     return pageNumbers;
   };
 
   return (
-    <div className="receipts flex flex-col h-full">
+    <div className="receipts flex flex-col w-[calc(100vw - 336px)] min-w-[1000px] max-w-[1200px] h-[100%] relative ">
       <div className="text-40px font-medium text-light-gray">Receipts</div>
       <div className="flex flex-row items-center">
         <div className="SearchBar relative w-full max-w-[240px] h-8 mt-2">
@@ -345,7 +350,7 @@ function Receipts() {
           Add New
         </button>
       </div>
-      <div className="receipts-list relative mt-3 h-full w-full bg-black rounded-xl overflow-auto">
+      <div className="receipts-list relative mt-3 h-full min-h-[568px] w-[calc(100vw - 336px)] bg-black rounded-xl overflow-auto">
         <div className="flex flex-row items-center text-light-gray text-sm font-medium px-8 pt-3 pb-4">
           <div className="w-[14%] text-base">ID</div>
           <div className="w-[16%] text-base">Date</div>

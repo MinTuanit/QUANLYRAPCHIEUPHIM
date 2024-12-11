@@ -8,25 +8,25 @@ import ArrowDownImg from "../assets/images/arrowDown.svg";
 
 function Header({ProfileName, ProfileRole, ProfilePic, className}) {
   const handleCalendarClick = () => {
-    alert("Calendar clicked");
+    // alert("Calendar clicked");
   };
   const handleMessageClick = () => {
-    alert("Message clicked");
+    // alert("Message clicked");
   };
   const handleNotificationClick = () => {
-    alert("Notification clicked");
+    // alert("Notification clicked");
   }
   const handleArrowDownClick = () => {
-    alert("Arrow down clicked");
+    // alert("Arrow down clicked");
   };
   return (
-    <header className={`header bg-black w-full h-70 flex items-center p-4 border-b border-line-gray ${className}`}>
-      <Link to="/" className="logo pl-3">
+    <header className={`header fixed top-0 left-0 z-[1000] bg-black w-[100vw] h-[60px] flex items-center p-4 border-b-[2px] border-line-gray ${className}`}>
+      <Link to="/" className="logo pl-3 shrink-0 w-60">
         <img src={logo} alt="Clinic logo" />
       </Link>
-      <div className="border-l border-line-gray absolute left-60 h-70" />
-      <div className="flex items-center ml-auto pr-10 space-x-4">
-        <div className="space-x-4 mr-6">
+      <div className="border-l-[2px] border-line-gray absolute left-60 h-70" />
+      <div className="flex items-center ml-auto mr-6 w-[calc(100vw - 240px)] space-x-4 flex-shrink-0">
+        <div className="space-x-4">
           <button className="header-calendar hover:transform hover:-translate-y-1 transition-transform duration-200" onClick={handleCalendarClick}>
             <img className="size-6" src={CalendarImg} alt="Calendar" />
           </button>

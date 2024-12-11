@@ -14,8 +14,8 @@
   content: "";
   position: absolute;
   top: 0px;
-  left: -16px;
-  right: 16px;
+  left: -6px;
+  right: -6px;
   bottom: 0px;
   background-color: white;
   border-radius: 10px;
@@ -137,25 +137,33 @@
   color: black;
 }
 
+.pagination-btn {
+  color: gray;
+  font-weight: 500;
+  position: absolute;
+  z-index: 1;
+}
+
 .pagination-btn::before {
   content: "";
   position: absolute;
-  top: -4px;
-  left: -10px;
-  right: -10px;
-  bottom: -4px;
+  top: -6px;
+  left: -12px;
+  right: -12px;
+  bottom: -6px;
   background-color: white;
-  border-radius: 16px;
+  border-radius: 10px;
   z-index: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .pagination-btn:hover::before {
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .pagination-btn:hover {
+  font-weight: 600;
   color: #DADADA;
 }
 

@@ -17,23 +17,16 @@ function Movie({ poster, name, year, status }) {
           <div className="font-light text-[11px] text-green-800">{status}</div>
         )) ||
           (status === "Coming Soon" && (
-            <div className="font-light text-[11px] text-sky-800">
-              {status}
-            </div>
+            <div className="font-light text-[11px] text-sky-800">{status}</div>
           )) ||
           (status === "Stopped" && (
-            <div className="font-light text-[11px] text-rose-800">
-              {status}
-            </div>
+            <div className="font-light text-[11px] text-rose-800">{status}</div>
           )) ||
           (status === "Unknown" && (
-            <div className="font-light text-[11px] text-gray">
-              {status}
-            </div>
+            <div className="font-light text-[11px] text-gray">{status}</div>
           ))}
       </div>
     </div>
   );
 }
-
 export default Movie;

@@ -451,7 +451,7 @@ const exampleEmployees = [
     position: "Developer",
     shift: "Morning",
     birth: "01/01/2000",
-  }
+  },
 ];
 
 function Employees() {
@@ -463,10 +463,12 @@ function Employees() {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+    setCurrentPage(1);
   };
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);
+    setCurrentPage(1);
   };
 
   const handleCalendarClick = () => {
@@ -482,7 +484,7 @@ function Employees() {
   };
 
   const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    if (pageNumber != "...") setCurrentPage(pageNumber);
   };
 
   const filteredEmployees = exampleEmployees.filter((employee) =>
@@ -491,22 +493,33 @@ function Employees() {
 
   const totalPages = Math.ceil(filteredEmployees.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentEmployees = filteredEmployees.slice(startIndex, startIndex + itemsPerPage);
+  const currentEmployees = filteredEmployees.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   const getPageNumbers = () => {
     const pageNumbers = [];
-    const startPage = Math.max(1, currentPage - Math.floor(pageRangeDisplayed / 2));
+    const startPage = Math.max(
+      1,
+      currentPage - Math.floor(pageRangeDisplayed / 2)
+    );
     const endPage = Math.min(totalPages, startPage + pageRangeDisplayed - 1);
-
-    for (let i = startPage; i <= endPage; i++) {
+    let i;
+    for (i = startPage; i <= endPage; i++) {
       pageNumbers.push(i);
     }
-
+    if (pageNumbers.length < pageRangeDisplayed && pageRangeDisplayed < totalPages) {
+      if (startPage > 1)
+        pageNumbers.unshift("...");
+      else if (endPage < totalPages)
+        pageNumbers.push("...");
+    }
     return pageNumbers;
   };
 
   return (
-    <div className="employees flex flex-col h-full relative">
+    <div className="employees flex flex-col w-[calc(100vw - 336px)] min-w-[1000px] max-w-[1200px] h-[100%] relative ">
       <div className="text-40px font-medium text-light-gray">Employees</div>
       <div className="flex flex-row items-center">
         <div className="SearchBar relative w-full max-w-[240px] h-8 mt-2">
@@ -555,7 +568,7 @@ function Employees() {
           Add New
         </button>
       </div>
-      <div className="employees-list mt-3 h-full w-full bg-black rounded-xl overflow-auto">
+      <div className="employees-list mt-3 h-full min-h-[568px] w-[calc(100vw - 336px)] bg-black rounded-xl overflow-auto">
         <div className="flex flex-row items-center text-light-gray text-sm font-medium px-8 pt-3 pb-4">
           <div className="w-[8%] text-base">ID</div>
           <div className="w-[24%] text-base">Name</div>
@@ -575,29 +588,38 @@ function Employees() {
             <Employee key={employee.Id} {...employee} />
           ))}
         </div>
-        <div className="pagination-controls absolute bottom-5 right-36 text-white">
-        {currentPage > 1 && (
-          <button className="pagination-btn absolute right-[164px] text-gray font-semibold"
-            onClick={() => handlePageChange(currentPage - 1)}>
-            Previous
-          </button>
-        )}
-        {getPageNumbers().map((pageNumber) => (
-          <button
-            key={pageNumber}
-            onClick={() => handlePageChange(pageNumber)}
-            className={`page-number-btn ${currentPage === pageNumber ? "active" : ""}`}
-          >
-            {pageNumber}
-          </button>
-        ))}
-        {currentPage < totalPages && (
-          <button className="pagination-btn absolute -right-14 text-gray font-semibold"
-            onClick={() => handlePageChange(currentPage + 1)}>
-            Next
-          </button>
-        )}
-      </div>
+        <div className="pagination-controls text-white absolute bottom-8 right-24 items-center justify-center">
+          {currentPage > 1 && (
+            <button
+              className="pagination-btn right-56"
+              onClick={() => handlePageChange(currentPage - 1)}
+            >
+              Previous
+            </button>
+          )}
+          <div className="absolute right-14 flex">
+            {getPageNumbers().map((pageNumber) => (
+              <button
+                key={pageNumber}
+                onClick={() => handlePageChange(pageNumber)}
+                className={`page-number-btn ${
+                  currentPage === pageNumber ? "active" : ""
+                }`}
+              >
+                {pageNumber}
+              </button>
+            ))}
+          </div>
+
+          {currentPage < totalPages && (
+            <button
+              className="pagination-btn right-0"
+              onClick={() => handlePageChange(currentPage + 1)}
+            >
+              Next
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

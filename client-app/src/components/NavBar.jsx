@@ -7,17 +7,18 @@ function NavigationBar({ topChildren, botChildren, notificationChildren }) {
   };
 
   return (
-    <div className="h-[calc(100vh-74px)] w-60 flex flex-col items-start relative bg-black">
-      <div className="border-l border-line-gray absolute left-60 h-full" />
-      <div className="relative flex flex-col py-6 pl-[28px] w-full box-border overflow-hidden h-[54%]">
+    <div className="fixed top-[60px] left-0 z-[999] h-[calc(100vh-60px)] w-60 flex flex-col items-start bg-black">
+      <div className="border-l-[2px] border-line-gray absolute left-60 h-full" />
+      <div className="relative flex flex-col py-3 pl-[20px] w-full box-border overflow-hidden h-[62%] min-h-[316px]">
         {topChildren}
       </div>
-      <div className="border-t border-line-gray w-184 self-center" />
-      <div className="notification-box relative flex justify-center items-center w-full h-[26%]">
+      <div className="border-t border-line-gray w-[210px] self-center" />
+      <div className="notification-box relative flex justify-center items-center w-full h-[24%]">
         {notificationChildren}
       </div>
-      <div className="relative flex flex-col py-6 pl-[28px] w-full box-border overflow-hidden h-[20%]">
+      <div className="relative flex flex-col py-2 pl-[28px] w-full box-border overflow-hidden h-[14%] min-h-[100px]">
         {botChildren}
+        <div className="w-[200px] self-center text-sm text-line-gray font-light">Developed by Group 7</div>
       </div>     
     </div>
   );

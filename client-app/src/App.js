@@ -44,7 +44,7 @@ function App() {
           ProfileRole={"Admin"}
           ProfilePic={ProfileImg}
         />
-        <div className="main-layout flex flex-1">
+        <div className="main-layout flex flex-1 mt-[60px]">
           <NavBar
             topChildren={[
               <NavSelection icon={HomeImg} title="Home" to="/" />,
@@ -79,7 +79,7 @@ function App() {
               />,
             ]}
           />
-          <div className="content flex-1 mx-12 my-4 overflow-auto">
+          <div className="content w-[calc(100vw-240px)] ml-60 px-12 py-4 overflow-auto">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/employees" element={<Employees />} />

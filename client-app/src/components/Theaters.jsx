@@ -145,7 +145,7 @@ function Theaters() {
     return theater.id.toLowerCase().includes(searchTerm.toLowerCase());
   });
   return (
-    <div className="Theaters flex flex-col h-full">
+    <div className="Theaters flex flex-col h-[665px]">
       <div className="text-40px font-medium text-light-gray">Theaters</div>
       <div className="flex flex-row items-center mt-4">
         <div className="SearchBar relative w-full max-w-[240px] h-8">

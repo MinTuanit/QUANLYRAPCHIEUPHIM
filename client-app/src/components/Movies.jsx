@@ -169,7 +169,7 @@ function Movies() {
     return matchesTab && matchesSearch;
   });
   return (
-    <div className="movies flex flex-col h-full">
+    <div className="movies flex flex-col h-[673px]">
       <div className="text-40px font-medium text-light-gray">Movies</div>
       <div className="movie-tabs flex mt-4 z-20 text-light-gray">
         <button
@@ -230,14 +230,14 @@ function Movies() {
           />
         </div>
       </div>
-      <div className="content flex -mt-[2px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none pl-12 py-6 pr-4 overflow-auto">
+      <div className="content relative -mt-[2px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none pl-12 py-6 pr-4 overflow-auto">
         <div className="list flex-1 grid grid-cols-6 gap-y-8 max-h-[510px] py-3 overflow-y-auto">
           {filteredMovies.map((movie, index) => (
             <Movie key={index} {...movie} />
           ))}
         </div>
         <button
-          className="fixed bottom-10 right-16 size-11 rounded-2xl bg-red hover:bg-dark-red duration-200"
+          className="absolute bottom-6 right-9 size-11 rounded-2xl bg-red hover:bg-dark-red duration-200"
           onClick={handleAddNewClick}
         >
           <img className="size-11" src={addImg} alt="Add New" />
