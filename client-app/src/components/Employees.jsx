@@ -159,7 +159,154 @@ const exampleEmployees = [
     birth: "01/01/2000",
   },
   {
-    Id: 2,
+    Id: 332,
+    name: "Jane Smith",
+    position: "Designer",
+    shift: "Evening",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 33,
+    name: "Sam Johnson",
+    position: "Manager",
+    shift: "Night",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 34,
+    name: "Alex Brown",
+    position: "Developer",
+    shift: "Morning",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 35,
+    name: "Mia Davis",
+    position: "Designer",
+    shift: "Evening",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 36,
+    name: "Chris White",
+    position: "Manager",
+    shift: "Night",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 37,
+    name: "John Doe",
+    position: "Developer",
+    shift: "Morning",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 38,
+    name: "Jane Smith",
+    position: "Designer",
+    shift: "Evening",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 39,
+    name: "Sam Johnson",
+    position: "Manager",
+    shift: "Night",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 30,
+    name: "Alex Brown",
+    position: "Developer",
+    shift: "Morning",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 41,
+    name: "Mia Davis",
+    position: "Designer",
+    shift: "Evening",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 42,
+    name: "Chris White",
+    position: "Manager",
+    shift: "Night",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 43,
+    name: "John Doe",
+    position: "Developer",
+    shift: "Morning",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 44,
+    name: "Jane Smith",
+    position: "Designer",
+    shift: "Evening",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 45,
+    name: "Sam Johnson",
+    position: "Manager",
+    shift: "Night",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 46,
+    name: "Alex Brown",
+    position: "Developer",
+    shift: "Morning",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 47,
+    name: "Mia Davis",
+    position: "Designer",
+    shift: "Evening",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 48,
+    name: "Chris White",
+    position: "Manager",
+    shift: "Night",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 1,
+    name: "John Doe",
+    position: "Developer",
+    shift: "Morning",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 50,
+    name: "Jane Smith",
+    position: "Designer",
+    shift: "Evening",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 51,
+    name: "Sam Johnson",
+    position: "Manager",
+    shift: "Night",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 52,
+    name: "Alex Brown",
+    position: "Developer",
+    shift: "Morning",
+    birth: "01/01/2000",
+  },
+  {
+    Id: 5,
     name: "Jane Smith",
     position: "Designer",
     shift: "Evening",
@@ -278,29 +425,8 @@ const exampleEmployees = [
     birth: "01/01/2000",
   },
   {
-    Id: 19,
+    Id: 2,
     name: "John Doe",
-    position: "Developer",
-    shift: "Morning",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 20,
-    name: "Jane Smith",
-    position: "Designer",
-    shift: "Evening",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 21,
-    name: "Sam Johnson",
-    position: "Manager",
-    shift: "Night",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 22,
-    name: "Alex Brown",
     position: "Developer",
     shift: "Morning",
     birth: "01/01/2000",
@@ -313,140 +439,14 @@ const exampleEmployees = [
     birth: "01/01/2000",
   },
   {
-    Id: 3,
+    Id: 1,
     name: "Sam Johnson",
     position: "Manager",
     shift: "Night",
     birth: "01/01/2000",
   },
   {
-    Id: 4,
-    name: "Alex Brown",
-    position: "Developer",
-    shift: "Morning",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 5,
-    name: "Mia Davis",
-    position: "Designer",
-    shift: "Evening",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 6,
-    name: "Chris White",
-    position: "Manager",
-    shift: "Night",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 7,
-    name: "John Doe",
-    position: "Developer",
-    shift: "Morning",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 8,
-    name: "Jane Smith",
-    position: "Designer",
-    shift: "Evening",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 9,
-    name: "Sam Johnson",
-    position: "Manager",
-    shift: "Night",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 10,
-    name: "Alex Brown",
-    position: "Developer",
-    shift: "Morning",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 11,
-    name: "Mia Davis",
-    position: "Designer",
-    shift: "Evening",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 12,
-    name: "Chris White",
-    position: "Manager",
-    shift: "Night",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 13,
-    name: "John Doe",
-    position: "Developer",
-    shift: "Morning",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 14,
-    name: "Jane Smith",
-    position: "Designer",
-    shift: "Evening",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 15,
-    name: "Sam Johnson",
-    position: "Manager",
-    shift: "Night",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 16,
-    name: "Alex Brown",
-    position: "Developer",
-    shift: "Morning",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 17,
-    name: "Mia Davis",
-    position: "Designer",
-    shift: "Evening",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 18,
-    name: "Chris White",
-    position: "Manager",
-    shift: "Night",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 19,
-    name: "John Doe",
-    position: "Developer",
-    shift: "Morning",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 20,
-    name: "Jane Smith",
-    position: "Designer",
-    shift: "Evening",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 21,
-    name: "Sam Johnson",
-    position: "Manager",
-    shift: "Night",
-    birth: "01/01/2000",
-  },
-  {
-    Id: 22,
+    Id: 1,
     name: "Alex Brown",
     position: "Developer",
     shift: "Morning",
@@ -484,12 +484,24 @@ function Employees() {
   };
 
   const handlePageChange = (pageNumber) => {
-    if (pageNumber != "...") setCurrentPage(pageNumber);
+    if (pageNumber !== "...") setCurrentPage(pageNumber);
   };
 
-  const filteredEmployees = exampleEmployees.filter((employee) =>
-    employee.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const uniqueEmployees = exampleEmployees.filter(
+    (employee, index, self) =>
+      index === self.findIndex((e) => e.Id === employee.Id)
   );
+
+  const filteredEmployees = uniqueEmployees.filter((employee) => {
+    const searchTermLower = searchTerm.toLowerCase();
+    return (
+      (employee.name && employee.name.toLowerCase().includes(searchTermLower)) ||
+      (employee.position && employee.position.toLowerCase().includes(searchTermLower)) ||
+      (employee.department && employee.department.toLowerCase().includes(searchTermLower)) ||
+      (employee.email && employee.email.toLowerCase().includes(searchTermLower)) ||
+      (employee.phone && employee.phone.toLowerCase().includes(searchTermLower))
+    );
+  });
 
   const totalPages = Math.ceil(filteredEmployees.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;

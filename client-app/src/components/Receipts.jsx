@@ -247,10 +247,12 @@ function Receipts() {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+    setCurrentPage(1);
   };
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);
+    setCurrentPage(1);
   };
 
   const handleCalendarClick = () => {
@@ -266,12 +268,23 @@ function Receipts() {
   };
 
   const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    if (pageNumber !== "...") setCurrentPage(pageNumber);
   };
 
-  const filteredReceipts = exampleReceipts.filter((receipt) =>
-    receipt.movie.toLowerCase().includes(searchTerm.toLowerCase())
+  const uniqueReceipts = exampleReceipts.filter(
+    (receipt, index, self) =>
+      index === self.findIndex((r) => r.Id === receipt.Id)
   );
+
+  const filteredReceipts = uniqueReceipts.filter((receipt) => {
+    const searchTermLower = searchTerm.toLowerCase();
+    return (
+      (receipt.movie && receipt.movie.toLowerCase().includes(searchTermLower)) ||
+      (receipt.customer && receipt.customer.toLowerCase().includes(searchTermLower)) ||
+      (receipt.date && receipt.date.toLowerCase().includes(searchTermLower)) ||
+      (receipt.amount && receipt.amount.toString().includes(searchTermLower))
+    );
+  });
 
   const totalPages = Math.ceil(filteredReceipts.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;

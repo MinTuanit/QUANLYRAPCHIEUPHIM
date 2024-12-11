@@ -136,11 +136,15 @@ function Products() {
       (activeTab === "Others"
         ? product.type !== "Food and Drinks" && product.type !== "Souvenirs"
         : product.type === activeTab);
-    const matchesSearch = product.title
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+    const searchTermLower = searchTerm.toLowerCase();
+    const matchesSearch =
+      (product.title && product.title.toLowerCase().includes(searchTermLower)) ||
+      (product.description && product.description.toLowerCase().includes(searchTermLower)) ||
+      (product.type && product.type.toLowerCase().includes(searchTermLower)) ||
+      (product.price && product.price.toString().includes(searchTermLower));
     return matchesTab && matchesSearch;
   });
+  
   return (
     <div className="products flex flex-col h-[673px]">
       <div className="text-40px font-medium text-light-gray">Products</div>
@@ -184,7 +188,7 @@ function Products() {
           />
         </div>
       </div>
-      <div className="content relative -mt-[2px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none pl-12 py-6 pr-4 overflow-auto">
+      <div className="content relative -mt-[3px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none pl-12 py-6 pr-4 overflow-auto">
         <div className="list grid grid-cols-7 gap-2 max-h-[510px] py-3 overflow-y-auto">
           {filteredProducts.map((product, index) => (
             <Product key={index} {...product} />

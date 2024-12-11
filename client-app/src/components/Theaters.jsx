@@ -142,8 +142,15 @@ function Theaters() {
   };
 
   const filteredTheaters = exampleTheaters.filter((theater) => {
-    return theater.id.toLowerCase().includes(searchTerm.toLowerCase());
+    const searchTermLower = searchTerm.toLowerCase();
+    return (
+      (theater.id && theater.id.toLowerCase().includes(searchTermLower)) ||
+      (theater.name && theater.name.toLowerCase().includes(searchTermLower)) ||
+      (theater.location && theater.location.toLowerCase().includes(searchTermLower)) ||
+      (theater.capacity && theater.capacity.toString().includes(searchTermLower))
+    );
   });
+  
   return (
     <div className="Theaters flex flex-col h-[665px]">
       <div className="text-40px font-medium text-light-gray">Theaters</div>

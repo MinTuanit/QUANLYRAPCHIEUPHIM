@@ -163,11 +163,15 @@ function Movies() {
 
   const filteredMovies = exampleMovies.filter((movie) => {
     const matchesTab = activeTab === "All" || movie.status === activeTab;
-    const matchesSearch = movie.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+    const searchTermLower = searchTerm.toLowerCase();
+    const matchesSearch =
+      (movie.name && movie.name.toLowerCase().includes(searchTermLower)) ||
+      (movie.status && movie.status.toLowerCase().includes(searchTermLower)) ||
+      (movie.year && movie.year.toString().includes(searchTermLower)) ||
+      (movie.description && movie.description.toLowerCase().includes(searchTermLower));
     return matchesTab && matchesSearch;
   });
+  
   return (
     <div className="movies flex flex-col h-[673px]">
       <div className="text-40px font-medium text-light-gray">Movies</div>
@@ -230,7 +234,7 @@ function Movies() {
           />
         </div>
       </div>
-      <div className="content relative -mt-[2px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none pl-12 py-6 pr-4 overflow-auto">
+      <div className="content relative -mt-[3px] w-full h-full bg-black border-[3px] border-line-gray rounded-b-xl rounded-tr-xl rounded-tl-none pl-12 py-6 pr-4 overflow-auto">
         <div className="list flex-1 grid grid-cols-6 gap-y-8 max-h-[510px] py-3 overflow-y-auto">
           {filteredMovies.map((movie, index) => (
             <Movie key={index} {...movie} />
