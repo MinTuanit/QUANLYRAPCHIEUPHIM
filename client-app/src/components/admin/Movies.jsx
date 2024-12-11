@@ -1,18 +1,18 @@
 import { useState } from "react";
 import Movie from "./items/Movie";
-import agentMovieImg from "../assets/images/examples/agentMovie.svg";
-import avatarMovieImg from "../assets/images/examples/avatarMovie.svg";
-import jokerMovieImg from "../assets/images/examples/jokerMovie.svg";
-import endgameMovieImg from "../assets/images/examples/endgameMovie.svg";
-import screamMovieImg from "../assets/images/examples/screamMovie.svg";
-import titanicMovieImg from "../assets/images/examples/titanicMovie.svg";
-import barbieMovieImg from "../assets/images/examples/barbieMovie.svg";
-import batmanMovieImg from "../assets/images/examples/batmanMovie.svg";
-import shangchiMovieImg from "../assets/images/examples/shangchiMovie.svg";
-import notimeMovieImg from "../assets/images/examples/notimeMovie.svg";
-import SearchImg from "../assets/images/search.svg";
-import CalendarImg from "../assets/images/calendar.svg";
-import addImg from "../assets/images/add.svg";
+import agentMovieImg from "../../assets/images/examples/agentMovie.svg";
+import avatarMovieImg from "../../assets/images/examples/avatarMovie.svg";
+import jokerMovieImg from "../../assets/images/examples/jokerMovie.svg";
+import endgameMovieImg from "../../assets/images/examples/endgameMovie.svg";
+import screamMovieImg from "../../assets/images/examples/screamMovie.svg";
+import titanicMovieImg from "../../assets/images/examples/titanicMovie.svg";
+import barbieMovieImg from "../../assets/images/examples/barbieMovie.svg";
+import batmanMovieImg from "../../assets/images/examples/batmanMovie.svg";
+import shangchiMovieImg from "../../assets/images/examples/shangchiMovie.svg";
+import notimeMovieImg from "../../assets/images/examples/notimeMovie.svg";
+import SearchImg from "../../assets/images/search.svg";
+import CalendarImg from "../../assets/images/calendar.svg";
+import addImg from "../../assets/images/add.svg";
 
 const exampleMovies = [
   {

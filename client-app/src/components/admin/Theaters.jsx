@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Theater from "./items/Theater";
-import SearchImg from "../assets/images/search.svg";
-import addImg from "../assets/images/add.svg";
+import SearchImg from "../../assets/images/search.svg";
+import addImg from "../../assets/images/add.svg";
 
 const exampleTheaters = [
   {

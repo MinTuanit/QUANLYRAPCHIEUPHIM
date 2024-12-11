@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Employee from "./items/Employee";
-import SearchImg from "../assets/images/search.svg";
-import CalendarImg from "../assets/images/calendar.svg";
+import SearchImg from "../../assets/images/search.svg";
+import CalendarImg from "../../assets/images/calendar.svg";
 
 const exampleEmployees = [
   {

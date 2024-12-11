@@ -1,6 +1,6 @@
 import React from "react";
-import DeleteImg from "../../assets/images/delete.svg";
-import InfoImg from "../../assets/images/info.svg";
+import DeleteImg from "../../../assets/images/delete.svg";
+import InfoImg from "../../../assets/images/info.svg";
 
 function Receipt({ Id, date, movie, showtime, items, totalCost }) {
   const handleDeleteClick = () => {

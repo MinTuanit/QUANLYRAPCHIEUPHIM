@@ -1,5 +1,5 @@
 import React from "react";
-import infoImg from "../../assets/images/info.svg";
+import infoImg from "../../../assets/images/info.svg";
 
 function Theater({ id, status, capacity, playing }) {
   const handleInfoClick = () => {

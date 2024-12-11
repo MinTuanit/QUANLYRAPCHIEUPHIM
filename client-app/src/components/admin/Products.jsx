@@ -1,15 +1,15 @@
 import { useState } from "react";
-import SmallPopImg from "../assets/images/examples/smallpop.svg";
-import LargePopImg from "../assets/images/examples/bigpop.svg";
-import CokeImg from "../assets/images/examples/coke.svg";
-import LaysImg from "../assets/images/examples/lays.svg";
-import WaterImg from "../assets/images/examples/water.svg";
-import SpriteImg from "../assets/images/examples/sprite.svg";
-import Combo1Img from "../assets/images/examples/combo1.svg";
-import Combo2Img from "../assets/images/examples/combo2.svg";
+import SmallPopImg from "../../assets/images/examples/smallpop.svg";
+import LargePopImg from "../../assets/images/examples/bigpop.svg";
+import CokeImg from "../../assets/images/examples/coke.svg";
+import LaysImg from "../../assets/images/examples/lays.svg";
+import WaterImg from "../../assets/images/examples/water.svg";
+import SpriteImg from "../../assets/images/examples/sprite.svg";
+import Combo1Img from "../../assets/images/examples/combo1.svg";
+import Combo2Img from "../../assets/images/examples/combo2.svg";
 import Product from "./items/Product";
-import SearchImg from "../assets/images/search.svg";
-import addImg from "../assets/images/add.svg";
+import SearchImg from "../../assets/images/search.svg";
+import addImg from "../../assets/images/add.svg";
 
 const exampleProducts = [
   {

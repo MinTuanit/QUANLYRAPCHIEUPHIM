@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import UsernameImg from "../assets/images/usernameIcon.svg";
-import PasswordImg from "../assets/images/passwordIcon.svg";
+import UsernameImg from "../../assets/images/usernameIcon.svg";
+import PasswordImg from "../../assets/images/passwordIcon.svg";
 
 function Login({ handleLoginClick, handleCloseClick }) {
   const onLoginClick = () => {
