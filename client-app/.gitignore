@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# Ignore Tailwind CSS output
+client-app/src/tailwind-output.css
+
+# Ignore .NET build artifacts
+obj/
+bin/

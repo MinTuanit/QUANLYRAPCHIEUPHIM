@@ -61,3 +61,10 @@ $RECYCLE.BIN/
 
 # Linux
 *~
+
+# Ignore Tailwind CSS output
+client-app/src/tailwind-output.css
+
+# Ignore .NET build artifacts
+obj/
+bin/
