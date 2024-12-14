@@ -29,7 +29,7 @@ function UserHome() {
     year: "2019",
   };
   return (
-    <div className="bg-black min-h-screen w-full h-[2500px] relative">
+    <div className="bg-black min-h-screen w-full h-[3000px] relative">
       <div className="absolute top-0 left-0 w-full">
         <div
           className="absolute top-0 left-0 w-full h-[200px] z-10"
@@ -52,7 +52,7 @@ function UserHome() {
           </span>
         </video>
         /* Title and Play Button */
-        <Card sx={{ maxWidth: 400, position: 'relative', zIndex: 30, marginTop: '100px', marginLeft: '100px', backgroundColor: 'rgba(0,0,0,0.75)' }}>
+        <Card sx={{ maxWidth: 400, position: 'relative', zIndex: 30, marginTop: '100px', marginLeft: '100px', backgroundColor: 'rgba(0,0,0,0.75)', flexShrink: 0 }}>
           <CardContent>
             <Typography gutterBottom variant="h4" component="div" color="white" fontStyle={{fontWeight: '600'}}>
             {demoMovie.title}

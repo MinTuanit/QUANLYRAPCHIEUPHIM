@@ -1,74 +1,96 @@
 import React from "react";
 import SlideItem from "./items/SlideItem";
-import magpieMovieImg from "../../assets/images/examples/magpie.jpg";
-import mariaMovieImg from "../../assets/images/examples/maria.jpg";
-import twelveangrymenMovieImg from "../../assets/images/examples/12angrymen.jpg";
-import babygirlMovieImg from "../../assets/images/examples/babygirl.jpg";
-import elevationMovieImg from "../../assets/images/examples/elevation.jpg";
-import pushpaMovieImg from "../../assets/images/examples/pushpa.jpg";
-import weliveintimeMovieImg from "../../assets/images/examples/weliveintime.jpg";
-import sololevelingMovieImg from "../../assets/images/examples/sololeveling.jpg";
+import venomMovieImg from "../../assets/images/examples/venom.jpg";
+import redoneMovieImg from "../../assets/images/examples/redone.jpg";
+import dirtyanglesMovieImg from "../../assets/images/examples/dirtyangles.jpg";
+import dexterMovieImg from "../../assets/images/examples/dexter.jpg";
+import carryonMovieImg from "../../assets/images/examples/carryon.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
 const exampleSlideItems = [
-  {
-    poster: magpieMovieImg,
-    name: "Magpie",
-    duration: "1h 30m",
-    genre: "Drama",
-    nation: "US"
+ {
+    poster: venomMovieImg,
+    name: "Venom: The Last Dance",
+    duration: "1h 52m",
+    genre: "Action",
+    nation: "US",
+    ageLimit: "16"
+
   },
   {
-    poster: mariaMovieImg,
-    name: "Maria",
+    poster: redoneMovieImg,
+    name: "Red One",
     duration: "1h 30m",
     genre: "Action",
-    nation: "US"
+    nation: "US",
+    ageLimit: "16"
   },
   {
-    poster: twelveangrymenMovieImg,
-    name: "12 Angry Men",
-    duration: "1h 36m",
-    genre: "Drama",
-    nation: "US"
-  },
-  {
-    poster: babygirlMovieImg,
-    name: "Baby Girl",
-    duration: "1h 45m",
-    genre: "Romance",
-    nation: "US"
-  },
-  {
-    poster: elevationMovieImg,
-    name: "Elevation",
-    duration: "1h 50m",
-    genre: "Sci-Fi",
-    nation: "US"
-  },
-  {
-    poster: pushpaMovieImg,
-    name: "Push pa 2: The Indians",
-    duration: "2h 10m",
+    poster: dirtyanglesMovieImg,
+    name: "Dirty Angles",
+    duration: "1h 30m",
     genre: "Action",
-    nation: "US"
+    nation: "US",
+    ageLimit: "16"
   },
   {
-    poster: weliveintimeMovieImg,
-    name: "We Live in Time",
-    duration: "1h 40m",
-    genre: "Drama",
-    nation: "US"
+    poster: dexterMovieImg,
+    name: "Dexter Original Sin",
+    duration: "1h 30m",
+    genre: "Action",
+    nation: "US",
+    ageLimit: "16"
   },
   {
-    poster: sololevelingMovieImg,
-    name: "Solo Leveling",
-    duration: "2h 5m",
-    genre: "Fantasy",
-    nation: "US"
+    poster: carryonMovieImg,
+    name: "Carry On",
+    duration: "1h 30m",
+    genre: "Action",
+    nation: "US",
+    ageLimit: "16"
   },
+  {
+    poster: venomMovieImg,
+    name: "Venom: The Last Dance",
+    duration: "1h 52m",
+    genre: "Action",
+    nation: "US",
+    ageLimit: "16"
+  },
+  {
+    poster: redoneMovieImg,
+    name: "Red One",
+    duration: "1h 30m",
+    genre: "Action",
+    nation: "US",
+    ageLimit: "16"
+  },
+  {
+    poster: dirtyanglesMovieImg,
+    name: "Dirty Angles",
+    duration: "1h 30m",
+    genre: "Action",
+    nation: "US",
+    ageLimit: "16"
+  },
+  {
+    poster: dexterMovieImg,
+    name: "Dexter Original Sin",
+    duration: "1h 30m",
+    genre: "Action",
+    nation: "US",
+    ageLimit: "16"
+  },
+  {
+    poster: carryonMovieImg,
+    name: "Carry On",
+    duration: "1h 30m",
+    genre: "Action",
+    nation: "US",
+    ageLimit: "16"
+  }
 ];
 //   superLargeDesktop: {
 //     breakpoint: { max: 4000, min: 3000 },
@@ -90,16 +112,33 @@ const exampleSlideItems = [
 
 function MovieSlide({ title, className }) {
   return (
-    <div className={`movie-slide-container w-full flex flex-col overflow-visible ${className}`}>
+    <div className={`movie-slide-container w-full flex flex-col overflow-visible px-4 ${className}`}>
       <div className="text-white text-4xl font-bold tracking-wide pb-5 overflow-visible ml-12">
         {title}
       </div>
       <Swiper
         modules={[Navigation, Mousewheel]}
         spaceBetween={0}
-        slidesPerView={4}
+        slidesPerView={5}
         loop={true}
         navigation
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+          1280: {
+            slidesPerView: 5,
+          },
+        }}
         className="w-full movie-slide"
       >
         {exampleSlideItems.map((item, index) => (

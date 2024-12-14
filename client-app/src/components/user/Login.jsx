@@ -319,7 +319,7 @@ function Login() {
                     checked={acceptPolicy}
                     onChange={handleAcceptPolicyChange}
                     name="acceptPolicy"
-                    color="primary"
+                    color="secondary"
                   />
                 }
                 label="I accept the policy"

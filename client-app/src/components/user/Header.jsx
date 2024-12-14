@@ -44,6 +44,7 @@ function UserHeader() {
         size="small"
         color="primary"
         sx={{ borderRadius: "20px" }}
+        className="flex-shrink-0"
       >
         <p className="text-black text-sm font-semibold">Book Ticket Now</p>
       </Button>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Roboto", sans-serif;
 }
 
 .nav-selection {
@@ -238,7 +238,7 @@
 .swiper-gradient-right {
   position: absolute;
   margin-top: 60px;
-  height: 170px;
+  height: 360px;
   width: 120px;
   z-index: 10;
   pointer-events: none;
