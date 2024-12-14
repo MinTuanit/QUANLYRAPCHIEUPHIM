@@ -31,18 +31,18 @@ function Footer({ className }) {
         </div>
 
         <div className="flex flex-col my-10 gap-3 mb-4 text-[13px] text-gray font-thin items-start">
-          <a href="/user/privacy-policy" className="hover:underline">
+        <Link to="/user/privacy-policy" className="hover:underline">
             Privacy policy
-          </a>
-          <a href="/user/terms-of-service" className="hover:underline">
+          </Link>
+          <Link to="/user/terms-of-service" className="hover:underline">
             Terms of service
-          </a>
-          <a href="/user/about-us" className="hover:underline">
+          </Link>
+          <Link to="/user/about-us" className="hover:underline">
             About us
-          </a>
-          <a href="/user/contact" className="hover:underline">
+          </Link>
+          <Link to="/user/contact" className="hover:underline">
             Feedback
-          </a>
+          </Link>
         </div>
         <div className="flex flex-col items-start space-y-4">
         <div className="text-gray text-sm">Connect with us on:</div>

@@ -6,8 +6,10 @@ import logo from "../../assets/images/logo.svg";
 import NotificationImg from "../../assets/images/notification.svg";
 import ArrowDownImg from "../../assets/images/arrowDown.svg";
 import SearchIcon from "@mui/icons-material/Search";
+import { AuthContext } from "../../AuthContext";
 
-function UserHeader({ isLoggedIn, userProfile, onLogout, className }) {
+function UserHeader() {
+  const { isLoggedIn, userProfile } = React.useContext(AuthContext);
   const navigate = useNavigate();
   const handleNotificationClick = () => {
     // alert("Notification clicked");
@@ -20,12 +22,11 @@ function UserHeader({ isLoggedIn, userProfile, onLogout, className }) {
   };
 
   const handleLogoutClick = () => {
-    onLogout();
     navigate("/");
   };
   return (
     <header
-      className={`header fixed top-0 left-0 z-[1000] w-[100vw] h-[60px] flex items-center p-4 ${className}`}
+      className={`header fixed top-0 left-0 z-[1000] w-[100vw] h-[60px] flex items-center p-4`}
       style={{
         background:
           "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85))",
@@ -83,7 +84,7 @@ function UserHeader({ isLoggedIn, userProfile, onLogout, className }) {
           />
         </button>
         {isLoggedIn ? (
-          <div>
+          <div className="flex flex-row items-center space-x-2">
             <span className="profile-name text-light-gray text-sm">
               {userProfile.name}
             </span>

@@ -1,17 +1,15 @@
-// src/components/ContactPage.jsx
-import { Header } from "antd/es/layout/layout";
-import React from "react";
+import { React, useContext } from "react";
 import UserHeader from "./Header";
-import ProfileImg from "../../assets/images/profile.png";
-import { UserOutlined } from "@ant-design/icons";
 import Footer from "./Footer";
+import { AuthContext } from "../../AuthContext";
 
-const Contact = () => {
+function Contact() {
+  const { isLoggedIn, userProfile } = useContext(AuthContext);
   return (
     <div className="bg-black w-full relative">
         <div className="h-[70px] bg-black w-full" />
         <div className="px-[25%] py-10 bg-white w-full h-[600px]">
-        <UserHeader ProfileName={"Nguyen Van A"} ProfilePic={ProfileImg} />
+        <UserHeader />
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="md:w-[100%]">
             <form className="bg-white p-6 rounded-lg">

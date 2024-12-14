@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import {
   Box,
@@ -15,8 +15,10 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Footer from "./Footer";
 import wallPaperImg from "./../../assets/images/wallpaper.jpg";
 import UseHeader from "./Header";
+import { AuthContext } from "../../AuthContext";
 
-function Login({ onLogin }) {
+function Login() {
+  const { handleLogin } = useContext(AuthContext);
   const [value, setValue] = useState("1");
   const [signInData, setSignInData] = useState({ email: "", password: "" });
   const [signUpData, setSignUpData] = useState({
@@ -44,14 +46,9 @@ function Login({ onLogin }) {
     setSignUpData({ ...signUpData, [name]: value });
   };
 
-  const handleLogin = () => {
-    // Simulate login
-    onLogin({ name: "John Doe", picture: "path/to/profile.jpg" });
-  };
-
   const handleSignUp = () => {
     // Simulate sign-up
-    onLogin({ name: "Jane Doe", picture: "path/to/profile.jpg" });
+    // onLogin({ name: "Jane Doe", picture: "path/to/profile.jpg" });
   };
 
   const handleClickShowPassword = () => {
@@ -85,7 +82,7 @@ function Login({ onLogin }) {
         // style={{ height: `calc(${containerHeight} + 120px)` }}
         src={wallPaperImg}
       />
-      <UseHeader isLoggedIn={false} userProfile={null} />
+      <UseHeader />
       <Box
         sx={{
           width: "36%",

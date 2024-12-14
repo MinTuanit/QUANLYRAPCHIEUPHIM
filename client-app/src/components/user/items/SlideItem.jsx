@@ -4,8 +4,14 @@ import StyleIcon from "@mui/icons-material/Style";
 import PublicIcon from "@mui/icons-material/Public";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
-function SlideItem({ poster, name, duration, category, nation }) {
+function SlideItem({ poster, name, duration, genre, nation }) {
+  const navigate = useNavigate(); 
+  const handleBuyTicketClicked = () => {
+    navigate("/user/movie-detail");
+  }
+
   return (
     <div className="slide-item relative flex-shrink-0 w-[292px] h-[250px] rounded-md overflow-hidden">
       <img
@@ -28,6 +34,7 @@ function SlideItem({ poster, name, duration, category, nation }) {
           size="small"
           color="secondary"
           sx={{ fontSize: 13, fontWeight: 500, color: "#000" }}
+          onClick={ handleBuyTicketClicked }
         >
           Buy Ticket
         </Button>
@@ -38,7 +45,7 @@ function SlideItem({ poster, name, duration, category, nation }) {
           <div className="text-[18px] my-2">{name}</div>
           <div className="text-xs pl-2 flex flex-col space-y-1">
             <div>
-              <StyleIcon sx={{ fontSize: 14, color: "#ebd113" }} /> {category}
+              <StyleIcon sx={{ fontSize: 14, color: "#ebd113" }} /> {genre}
             </div>
             <div>
               <AccessTimeIcon sx={{ fontSize: 14, color: "#ebd113" }} />{" "}

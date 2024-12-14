@@ -1,18 +1,17 @@
-import React, { useState, useRef } from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useState, useRef, useContext } from "react";
 import UserHeader from "./Header";
-import ProfileImg from "./../../assets/images/profile.png";
 import backgroundVideo from "./../../assets/videos/EndgameTrailer.mp4";
 import MovieSlide from "./MovieSlide";
 import MuteImg from "./../../assets/images/mute.png";
 import UnmuteImg from "./../../assets/images/unmute.png";
 import Footer from "./Footer";
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
+import { AuthContext } from "../../AuthContext";
 
-function UserHome( {isLoggedIn, userProfile} ) {
+function UserHome() {
+  const { isLoggedIn, userProfile } = useContext(AuthContext);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
-
   const toggleMute = () => {
     setIsMuted(!isMuted);
     if (videoRef.current) {
@@ -29,7 +28,6 @@ function UserHome( {isLoggedIn, userProfile} ) {
     duration: "3h 1m",
     year: "2019",
   };
-
   return (
     <div className="bg-black min-h-screen w-full h-[2500px] relative">
       <div className="absolute top-0 left-0 w-full">
@@ -40,7 +38,7 @@ function UserHome( {isLoggedIn, userProfile} ) {
               "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7))",
           }}
         />
-        <UserHeader isLoggedIn={isLoggedIn} userProfile={userProfile} />
+        <UserHeader />
         <video
           ref={videoRef}
           autoPlay

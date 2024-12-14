@@ -17,56 +17,56 @@ const exampleSlideItems = [
     poster: magpieMovieImg,
     name: "Magpie",
     duration: "1h 30m",
-    category: "Drama",
+    genre: "Drama",
     nation: "US"
   },
   {
     poster: mariaMovieImg,
     name: "Maria",
     duration: "1h 30m",
-    category: "Action",
+    genre: "Action",
     nation: "US"
   },
   {
     poster: twelveangrymenMovieImg,
     name: "12 Angry Men",
     duration: "1h 36m",
-    category: "Drama",
+    genre: "Drama",
     nation: "US"
   },
   {
     poster: babygirlMovieImg,
     name: "Baby Girl",
     duration: "1h 45m",
-    category: "Romance",
+    genre: "Romance",
     nation: "US"
   },
   {
     poster: elevationMovieImg,
     name: "Elevation",
     duration: "1h 50m",
-    category: "Sci-Fi",
+    genre: "Sci-Fi",
     nation: "US"
   },
   {
     poster: pushpaMovieImg,
     name: "Push pa 2: The Indians",
     duration: "2h 10m",
-    category: "Action",
+    genre: "Action",
     nation: "US"
   },
   {
     poster: weliveintimeMovieImg,
     name: "We Live in Time",
     duration: "1h 40m",
-    category: "Drama",
+    genre: "Drama",
     nation: "US"
   },
   {
     poster: sololevelingMovieImg,
     name: "Solo Leveling",
     duration: "2h 5m",
-    category: "Fantasy",
+    genre: "Fantasy",
     nation: "US"
   },
 ];
