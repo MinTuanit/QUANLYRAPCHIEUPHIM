@@ -8,9 +8,9 @@ import Footer from "./Footer";
 
 const Contact = () => {
   return (
-    <div className="bg-black w-full">
+    <div className="bg-black w-full relative">
         <div className="h-[70px] bg-black w-full" />
-        <div className="px-[25%] bg-white w-full h-[740px]">
+        <div className="px-[25%] py-10 bg-white w-full h-[600px]">
         <UserHeader ProfileName={"Nguyen Van A"} ProfilePic={ProfileImg} />
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="md:w-[100%]">
@@ -99,7 +99,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Footer className="mt-[40px] w-full" />
+      <Footer className="absolute bottom-auto w-full bg-black" />
     </div>
   );
 };

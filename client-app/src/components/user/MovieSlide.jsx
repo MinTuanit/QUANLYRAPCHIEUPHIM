@@ -18,48 +18,56 @@ const exampleSlideItems = [
     name: "Magpie",
     duration: "1h 30m",
     category: "Drama",
+    nation: "US"
   },
   {
     poster: mariaMovieImg,
     name: "Maria",
     duration: "1h 30m",
     category: "Action",
+    nation: "US"
   },
   {
     poster: twelveangrymenMovieImg,
     name: "12 Angry Men",
     duration: "1h 36m",
     category: "Drama",
+    nation: "US"
   },
   {
     poster: babygirlMovieImg,
     name: "Baby Girl",
     duration: "1h 45m",
     category: "Romance",
+    nation: "US"
   },
   {
     poster: elevationMovieImg,
     name: "Elevation",
     duration: "1h 50m",
     category: "Sci-Fi",
+    nation: "US"
   },
   {
     poster: pushpaMovieImg,
     name: "Push pa 2: The Indians",
     duration: "2h 10m",
     category: "Action",
+    nation: "US"
   },
   {
     poster: weliveintimeMovieImg,
     name: "We Live in Time",
     duration: "1h 40m",
     category: "Drama",
+    nation: "US"
   },
   {
     poster: sololevelingMovieImg,
     name: "Solo Leveling",
     duration: "2h 5m",
     category: "Fantasy",
+    nation: "US"
   },
 ];
 //   superLargeDesktop: {
@@ -83,16 +91,16 @@ const exampleSlideItems = [
 function MovieSlide({ title, className }) {
   return (
     <div className={`movie-slide-container w-full flex flex-col overflow-visible ${className}`}>
-      <div className="text-white text-xl tracking-wider pb-3 overflow-visible">
+      <div className="text-white text-4xl font-bold tracking-wide pb-5 overflow-visible ml-12">
         {title}
       </div>
       <Swiper
         modules={[Navigation, Mousewheel]}
         spaceBetween={0}
-        slidesPerView={5.6}
+        slidesPerView={4}
         loop={true}
         navigation
-        className="h-[130px] w-full movie-slide"
+        className="w-full movie-slide"
       >
         {exampleSlideItems.map((item, index) => (
           <SwiperSlide key={index}>

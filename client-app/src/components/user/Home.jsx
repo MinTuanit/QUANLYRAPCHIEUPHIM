@@ -7,8 +7,9 @@ import MovieSlide from "./MovieSlide";
 import MuteImg from "./../../assets/images/mute.png";
 import UnmuteImg from "./../../assets/images/unmute.png";
 import Footer from "./Footer";
+import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 
-function UserHome() {
+function UserHome( {isLoggedIn, userProfile} ) {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
 
@@ -30,7 +31,7 @@ function UserHome() {
   };
 
   return (
-    <div className="bg-black min-h-screen w-full h-[1500px] relative">
+    <div className="bg-black min-h-screen w-full h-[2500px] relative">
       <div className="absolute top-0 left-0 w-full">
         <div
           className="absolute top-0 left-0 w-full h-[200px] z-10"
@@ -39,7 +40,7 @@ function UserHome() {
               "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7))",
           }}
         />
-        <UserHeader ProfileName={"Nguyen Van A"} ProfilePic={ProfileImg} />
+        <UserHeader isLoggedIn={isLoggedIn} userProfile={userProfile} />
         <video
           ref={videoRef}
           autoPlay
@@ -52,23 +53,30 @@ function UserHome() {
             Your browser does not support the video tag.
           </span>
         </video>
-
         /* Title and Play Button */
-        <div className="absolute top-[200px] left-[4%] w-[40%] h-[290px] flex flex-col z-20">
-          <div className="text-white text-5xl font-bold whitespace-nowrap">
+        <Card sx={{ maxWidth: 400, position: 'relative', zIndex: 30, marginTop: '100px', marginLeft: '100px', backgroundColor: 'rgba(0,0,0,0.75)' }}>
+          <CardContent>
+            <Typography gutterBottom variant="h4" component="div" color="white" fontStyle={{fontWeight: '600'}}>
             {demoMovie.title}
-          </div>
-          <div className="text-white text-2xl font-light mt-8 mr-4 line-clamp-3 tracking-wider leading-[30px]">
-            {demoMovie.description}
-          </div>
-          <div className="mt-8 w-full flex flex-row items-center">
-            <button className="w-[180px] h-[50px] bg-gray rounded-md text-black text-2xl font-bold z-30 transition duration-300 hover:bg-dark-red">Play</button>
-        </div>
-        </div>
-        
+            </Typography>
+            <Typography variant="body2" color="gray">
+            Gerne: {demoMovie.genre}
+            </Typography>
+            <Typography variant="body2" color="gray">
+            Duration: {demoMovie.duration}
+            </Typography>
+            <Typography variant="body2" color="gray" margin={2}>
+            Description: {demoMovie.description}
+            </Typography>
+          </CardContent>
+          <CardActions sx={{ marginBottom: 2, marginLeft: 2 }}>
+            <Button variant="contained" size="medium">Book Ticket</Button>
+            <Button variant="contained" size="medium">Learn More</Button>
+          </CardActions>
+        </Card>
         <button
           onClick={toggleMute}
-          className="absolute top-[520px] right-12 border-gray border-2 bg-[rgba(0,0,0,0.2)] rounded-full z-30 p-2"
+          className="absolute top-[480px] right-12 border-gray border-2 bg-[rgba(0,0,0,0.2)] rounded-full z-30 p-2"
         >
           <img
             src={isMuted ? MuteImg : UnmuteImg}
@@ -83,10 +91,10 @@ function UserHome() {
               "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))",
           }}
         />
-        <div className="absolute space-y-12 w-full top-[550px] px-5 z-30">
+        <div className="absolute space-y-32 w-full top-[550px] px-5 z-30">
           <MovieSlide title="New movies" />
-          <MovieSlide title="Popular movies" />
-          <MovieSlide title="Trending movies" />
+          <MovieSlide title="Most Viewed" />
+          <MovieSlide title="Up Coming" />
         </div>
       </div>
       <Footer className="absolute bottom-0 left-0 w-full" />
