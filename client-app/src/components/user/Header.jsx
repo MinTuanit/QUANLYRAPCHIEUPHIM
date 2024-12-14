@@ -24,6 +24,11 @@ function UserHeader() {
   const handleLogoutClick = () => {
     navigate("/");
   };
+
+  const handleBuyTicketClicked = () => {
+    navigate("/user/movie-detail");
+  }
+  
   return (
     <header
       className={`header fixed top-0 left-0 z-[1000] w-[100vw] h-[60px] flex items-center p-4`}
@@ -45,6 +50,7 @@ function UserHeader() {
         color="primary"
         sx={{ borderRadius: "20px" }}
         className="flex-shrink-0"
+        onClick={handleBuyTicketClicked}
       >
         <p className="text-black text-sm font-semibold">Book Ticket Now</p>
       </Button>

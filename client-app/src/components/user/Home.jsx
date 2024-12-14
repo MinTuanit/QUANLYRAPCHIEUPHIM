@@ -7,8 +7,14 @@ import UnmuteImg from "./../../assets/images/unmute.png";
 import Footer from "./Footer";
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 import { AuthContext } from "../../AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function UserHome() {
+  const navigate = useNavigate();
+  const handleBuyTicketClicked = () => {
+    navigate("/user/movie-detail");
+  };
+    
   const { isLoggedIn, userProfile } = useContext(AuthContext);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
@@ -68,8 +74,8 @@ function UserHome() {
             </Typography>
           </CardContent>
           <CardActions sx={{ marginBottom: 2, marginLeft: 2 }}>
-            <Button variant="contained" size="medium">Book Ticket</Button>
-            <Button variant="contained" size="medium">Learn More</Button>
+            <Button variant="contained" size="medium" onClick={handleBuyTicketClicked}>Book Ticket</Button>
+            <Button variant="contained" size="medium" onClick={handleBuyTicketClicked}>Learn More</Button>
           </CardActions>
         </Card>
         <button
