@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { TextField, InputAdornment, Button } from "@mui/material";
@@ -9,8 +9,16 @@ import SearchIcon from "@mui/icons-material/Search";
 import { AuthContext } from "../../AuthContext";
 
 function UserHeader() {
-  const { isLoggedIn, userProfile } = React.useContext(AuthContext);
+  const [searchPhrase, setSearchPhrase] = useState('');
+  const { isLoggedIn, userProfile } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const handleSearchClick = () => {
+    if (searchPhrase.trim()) {
+      navigate(`/user/movie-search?query=${encodeURIComponent(searchPhrase)}`);
+    }
+  };
+
   const handleNotificationClick = () => {
     // alert("Notification clicked");
   };
@@ -26,7 +34,7 @@ function UserHeader() {
   };
 
   const handleBuyTicketClicked = () => {
-    navigate("/user/movie-detail");
+    navigate("/user/movie-list");
   }
   
   return (
@@ -60,10 +68,14 @@ function UserHeader() {
           variant="outlined"
           placeholder="Search..."
           size="small"
+          value={searchPhrase}
+          onChange={(e) => setSearchPhrase(e.target.value)}
           InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
+            endAdornment: (
+              <InputAdornment>
+                <Button onClick={handleSearchClick} sx={{ minWidth: 0, padding: 0 }}>
+                  <SearchIcon />
+                </Button>
               </InputAdornment>
             ),
             sx: {

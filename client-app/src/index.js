@@ -5,6 +5,7 @@ import './tailwind-output.css';
 import App from './App';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthProvider } from './AuthContext';
+import { BrowserRouter } from 'react-router-dom';
  
 import reportWebVitals from './reportWebVitals';
 
@@ -26,7 +27,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
     <AuthProvider>
+      <BrowserRouter>
         <App />
+      </BrowserRouter>
       </AuthProvider>
   </ThemeProvider>
   </React.StrictMode>

@@ -16,8 +16,8 @@ const exampleSlideItems = [
     duration: "1h 52m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
-
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   },
   {
     poster: redoneMovieImg,
@@ -25,7 +25,8 @@ const exampleSlideItems = [
     duration: "1h 30m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   },
   {
     poster: dirtyanglesMovieImg,
@@ -33,7 +34,8 @@ const exampleSlideItems = [
     duration: "1h 30m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   },
   {
     poster: dexterMovieImg,
@@ -41,7 +43,8 @@ const exampleSlideItems = [
     duration: "1h 30m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   },
   {
     poster: carryonMovieImg,
@@ -49,7 +52,8 @@ const exampleSlideItems = [
     duration: "1h 30m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   },
   {
     poster: venomMovieImg,
@@ -57,7 +61,8 @@ const exampleSlideItems = [
     duration: "1h 52m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   },
   {
     poster: redoneMovieImg,
@@ -65,7 +70,8 @@ const exampleSlideItems = [
     duration: "1h 30m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   },
   {
     poster: dirtyanglesMovieImg,
@@ -73,7 +79,8 @@ const exampleSlideItems = [
     duration: "1h 30m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   },
   {
     poster: dexterMovieImg,
@@ -81,7 +88,8 @@ const exampleSlideItems = [
     duration: "1h 30m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   },
   {
     poster: carryonMovieImg,
@@ -89,7 +97,8 @@ const exampleSlideItems = [
     duration: "1h 30m",
     genre: "Action",
     nation: "US",
-    ageLimit: "16"
+    ageLimit: "16",
+    trailer: "https://youtu.be/o-3XPcvInmE?si=ljJ6N2AnQleV0YYU"
   }
 ];
 //   superLargeDesktop: {

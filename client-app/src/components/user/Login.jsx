@@ -16,8 +16,10 @@ import Footer from "./Footer";
 import wallPaperImg from "./../../assets/images/wallpaper.jpg";
 import UseHeader from "./Header";
 import { AuthContext } from "../../AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  const navigate = useNavigate();
   const { handleLogin } = useContext(AuthContext);
   const [value, setValue] = useState("1");
   const [signInData, setSignInData] = useState({ email: "", password: "" });
@@ -67,6 +69,10 @@ function Login() {
     setAcceptPolicy(event.target.checked);
   };
 
+  const handleForgotPasswordClick = () => {
+    navigate("/user/reset-password");
+  };
+
   useEffect(() => {
     if (value === "1") {
       setContainerHeight("420px"); // Adjust height for Sign In tab
@@ -79,7 +85,6 @@ function Login() {
     <div className="bg-black min-h-screen w-full h-full flex flex-col justify-center relative">
       <img
         className="absolute w-full h-[820px] top-[60px] z-0 opacity-20"
-        // style={{ height: `calc(${containerHeight} + 120px)` }}
         src={wallPaperImg}
       />
       <UseHeader />
@@ -193,7 +198,7 @@ function Login() {
                     },
                   }}
                 />
-                <Button variant="text" color="secondary" size="small">
+                <Button variant="text" color="secondary" size="small" onClick={handleForgotPasswordClick}>
                   Forgot Password?
                 </Button>
               </Box>

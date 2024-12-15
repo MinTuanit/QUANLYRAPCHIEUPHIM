@@ -4,6 +4,11 @@ import UserHome from "./Home";
 import Contact from "./Contact";
 import Login from "./Login";
 import MovieDetail from "./MovieDetail";
+import ResetPassword from "./ResetPassword";
+import SearchResult from "./SearchResult";
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermsOfService from "./TermsOfService";
+import AboutUs from "./AboutUs";
 
 function User() {
   return (
@@ -14,6 +19,11 @@ function User() {
         <Route path="/contact" element={<Contact />} />   
         <Route path="/login" element={<Login />} />
         <Route path="/movie-detail" element={<MovieDetail />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/movie-search" element={<SearchResult />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </div>
   );

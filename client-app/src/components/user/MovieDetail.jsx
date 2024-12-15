@@ -7,7 +7,15 @@ import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import PersonOffIcon from "@mui/icons-material/PersonOff";
 import UserHeader from "./Header";
 import Footer from "./Footer";
-import { Button, Box, Tab, Tabs, Typography } from "@mui/material";
+import {
+  Button,
+  Box,
+  Tab,
+  Tabs,
+  Typography,
+  Dialog,
+  DialogContent,
+} from "@mui/material";
 import { styled, darken } from "@mui/system";
 
 const exampleMovie = {
@@ -154,14 +162,14 @@ const exampleShowtimes = [
   { id: "117", date: "15/12/2024", time: "09:00", type: "2D" },
   { id: "118", date: "15/12/2024", time: "10:00", type: "3D" },
   { id: "119", date: "15/12/2024", time: "11:00", type: "2D" },
-]
+];
 
 function MovieDetail() {
   return (
     <div className="bg-black min-h-screen w-full flex flex-col relative">
       <UserHeader />
       <img
-        className="absolute top-0 w-full object-cover z-0"
+        className="absolute top-[-200px] w-full object-cover z-0"
         src={exampleMovie.poster}
         style={{
           filter: "blur(10px)",
@@ -175,7 +183,7 @@ function MovieDetail() {
           <div className="text-white text-4xl font-bold self-center">
             SHOWTIMES
           </div>
-          <ShowTimes/>
+          <ShowTimes />
         </div>
       </div>
 
@@ -186,7 +194,23 @@ function MovieDetail() {
 
 export default MovieDetail;
 
-function MovieInfo() {
+function MovieInfo({ onClickOpen }) {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const getEmbedUrl = (url) => {
+    const videoIdMatch = url.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+    const videoId = videoIdMatch ? videoIdMatch[1] : null;
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
+  };
+
   return (
     <div className="flex flex-row z-10">
       <img
@@ -274,6 +298,7 @@ function MovieInfo() {
               variant="text"
               color="secondary"
               startIcon={<PlayCircleIcon sx={{ fontSize: 12 }} />}
+              onClick={handleClickOpen}
               sx={{
                 width: "200px",
                 fontSize: 18,
@@ -284,6 +309,18 @@ function MovieInfo() {
             >
               Watch Trailer
             </Button>
+            <Dialog open={open} onClose={handleClose} maxWidth="lg">
+              <DialogContent>
+                <iframe
+                  width="1000"
+                  height="562.5"
+                  src={getEmbedUrl(exampleMovie.trailer)}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Trailer"
+                ></iframe>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
@@ -316,70 +353,165 @@ const ShowTimes = () => {
   const getFormattedDate = (offset) => {
     const date = new Date("2024-12-14");
     date.setDate(date.getDate() + offset);
-    const fullDate = date.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
-    const displayDate = date.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' });
-    const weekday = date.toLocaleDateString('en-GB', { weekday: 'long' });
+    const fullDate = date.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    const displayDate = date.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+    });
+    const weekday = date.toLocaleDateString("en-GB", { weekday: "long" });
     return { fullDate, displayDate, weekday };
   };
 
   const selectedDate = getFormattedDate(value).fullDate;
 
-  const showtimes2D = exampleShowtimes.filter(showtime => showtime.date === selectedDate && showtime.type === "2D");
-  const showtimes3D = exampleShowtimes.filter(showtime => showtime.date === selectedDate && showtime.type === "3D");
+  const showtimes2D = exampleShowtimes.filter(
+    (showtime) => showtime.date === selectedDate && showtime.type === "2D"
+  );
+  const showtimes3D = exampleShowtimes.filter(
+    (showtime) => showtime.date === selectedDate && showtime.type === "3D"
+  );
 
   const isPastShowtime = (date, time) => {
-    const showtimeDate = new Date(`${date.split('/').reverse().join('-')}T${time}`);
+    const showtimeDate = new Date(
+      `${date.split("/").reverse().join("-")}T${time}`
+    );
     return showtimeDate < new Date();
   };
 
   return (
-    <Box sx={{ width: 1, paddingInline: 36, display: "flex", flexDirection: "column", alignItems: "center", marginTop: 5, zIndex: 10 }}>
+    <Box
+      sx={{
+        width: 1,
+        paddingInline: 36,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginTop: 5,
+        zIndex: 10,
+      }}
+    >
       <Tabs
         value={value}
         onChange={handleChange}
         TabIndicatorProps={{ style: { display: "none" } }}
         sx={{ display: "flex", justifyContent: "space-between" }}
       >
-        <CustomTab label={<CustomTabLabel {...getFormattedDate(0)} />} sx={{ marginRight: 2 }} />
-        <CustomTab label={<CustomTabLabel {...getFormattedDate(1)} />} sx={{ marginRight: 2 }} />
+        <CustomTab
+          label={<CustomTabLabel {...getFormattedDate(0)} />}
+          sx={{ marginRight: 2 }}
+        />
+        <CustomTab
+          label={<CustomTabLabel {...getFormattedDate(1)} />}
+          sx={{ marginRight: 2 }}
+        />
         <CustomTab label={<CustomTabLabel {...getFormattedDate(2)} />} />
       </Tabs>
-      <Box sx={{ paddingX: 4, paddingTop: 2, paddingBottom: 6, backgroundColor: "black", width: 800, marginTop: 6, borderRadius: 4 }}>
-        <Typography sx={{ fontWeight: 'medium', marginY: 2, fontSize: 26, color: 'lightgray', letterSpacing: '0.1em'  }}>Standard 2D</Typography>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-          {showtimes2D.map(showtime => (
+      <Box
+        sx={{
+          paddingX: 4,
+          paddingTop: 2,
+          paddingBottom: 6,
+          backgroundColor: "black",
+          width: 800,
+          marginTop: 6,
+          borderRadius: 4,
+        }}
+      >
+        <Typography
+          sx={{
+            fontWeight: "medium",
+            marginY: 2,
+            fontSize: 26,
+            color: "lightgray",
+            letterSpacing: "0.1em",
+          }}
+        >
+          Standard 2D
+        </Typography>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+          {showtimes2D.map((showtime) => (
             <Box
               key={showtime.id}
               sx={{
-                border: '1px solid',
-                borderColor: isPastShowtime(showtime.date, showtime.time) ? 'gray' : theme => theme.palette.secondary.main,
+                border: "1px solid",
+                borderColor: isPastShowtime(showtime.date, showtime.time)
+                  ? "gray"
+                  : (theme) => theme.palette.secondary.main,
                 padding: 1,
                 borderRadius: 1,
-                transition: 'transform 0.1s',
-                cursor: isPastShowtime(showtime.date, showtime.time) ? 'default' : 'pointer',
-              '&:hover': {transform: isPastShowtime(showtime.date, showtime.time) ? 'none' : 'translateY(-4px)' }
-            }}
+                transition: "transform 0.1s",
+                cursor: isPastShowtime(showtime.date, showtime.time)
+                  ? "default"
+                  : "pointer",
+                "&:hover": {
+                  transform: isPastShowtime(showtime.date, showtime.time)
+                    ? "none"
+                    : "translateY(-4px)",
+                },
+              }}
             >
-                <Typography sx={{ color: "gray", fontSize: 14, color: isPastShowtime(showtime.date, showtime.time) ? 'gray' : theme => theme.palette.secondary.main,  }}>{showtime.time}</Typography>
+              <Typography
+                sx={{
+                  color: "gray",
+                  fontSize: 14,
+                  color: isPastShowtime(showtime.date, showtime.time)
+                    ? "gray"
+                    : (theme) => theme.palette.secondary.main,
+                }}
+              >
+                {showtime.time}
+              </Typography>
             </Box>
           ))}
-        </Box> 
-        <Typography sx={{ fontWeight: 'medium', marginY: 2, fontSize: 26, color: 'lightgray', letterSpacing: '0.1em'  }}>Standard 3D</Typography>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-          {showtimes3D.map(showtime => (
-             <Box
-             key={showtime.id}
-             sx={{
-               border: '1px solid',
-               borderColor: isPastShowtime(showtime.date, showtime.time) ? 'gray' : theme => theme.palette.secondary.main,
-               padding: 1,
-               borderRadius: 1,
-               transition: 'transform 0.1s',
-               cursor: isPastShowtime(showtime.date, showtime.time) ? 'default' : 'pointer',
-             '&:hover': {transform: isPastShowtime(showtime.date, showtime.time) ? 'none' : 'translateY(-4px)' }
+        </Box>
+        <Typography
+          sx={{
+            fontWeight: "medium",
+            marginY: 2,
+            fontSize: 26,
+            color: "lightgray",
+            letterSpacing: "0.1em",
+          }}
+        >
+          Standard 3D
+        </Typography>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+          {showtimes3D.map((showtime) => (
+            <Box
+              key={showtime.id}
+              sx={{
+                border: "1px solid",
+                borderColor: isPastShowtime(showtime.date, showtime.time)
+                  ? "gray"
+                  : (theme) => theme.palette.secondary.main,
+                padding: 1,
+                borderRadius: 1,
+                transition: "transform 0.1s",
+                cursor: isPastShowtime(showtime.date, showtime.time)
+                  ? "default"
+                  : "pointer",
+                "&:hover": {
+                  transform: isPastShowtime(showtime.date, showtime.time)
+                    ? "none"
+                    : "translateY(-4px)",
+                },
               }}
-           >
-              <Typography sx={{ color: "gray", fontSize: 14, color: isPastShowtime(showtime.date, showtime.time) ? 'gray' : theme => theme.palette.secondary.main }}>{showtime.time}</Typography>
+            >
+              <Typography
+                sx={{
+                  color: "gray",
+                  fontSize: 14,
+                  color: isPastShowtime(showtime.date, showtime.time)
+                    ? "gray"
+                    : (theme) => theme.palette.secondary.main,
+                }}
+              >
+                {showtime.time}
+              </Typography>
             </Box>
           ))}
         </Box>
@@ -390,7 +522,11 @@ const ShowTimes = () => {
 
 const CustomTabLabel = ({ displayDate, weekday }) => (
   <Box>
-    <Typography sx={{ fontWeight: 'bold', fontSize: 18 }}>{displayDate}</Typography>
-    <Typography sx={{ fontWeight: 'normal', fontSize: 12, marginTop: 1 }}>{weekday}</Typography>
+    <Typography sx={{ fontWeight: "bold", fontSize: 18 }}>
+      {displayDate}
+    </Typography>
+    <Typography sx={{ fontWeight: "normal", fontSize: 12, marginTop: 1 }}>
+      {weekday}
+    </Typography>
   </Box>
 );

@@ -4,10 +4,14 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YoutubeIcon from "@mui/icons-material/YouTube";
 import XIcon from "@mui/icons-material/X";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
 
 function Footer({ className }) {
+  const navigate = useNavigate();
+  const handleBuyTicketClicked = () => {
+    navigate("/user/movie-detail");
+  };
   return (
     <footer className={`pb-20 text-white items-center bg-black" ${className}`}>
       <div className="w-full h-[1px] bg-line-gray self-center items-center" />
@@ -24,6 +28,7 @@ function Footer({ className }) {
             variant="outlined"
             size="small"
             color="primary"
+            onClick={handleBuyTicketClicked}
             sx={{ borderRadius: "20px", width: "180px", border: "2px solid", marginLeft: "10px" }}
           >
             <p className="text-sm font-semibold">Book Ticket Now</p>

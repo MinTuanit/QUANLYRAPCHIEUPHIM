@@ -2,104 +2,141 @@ import { React, useContext } from "react";
 import UserHeader from "./Header";
 import Footer from "./Footer";
 import { AuthContext } from "../../AuthContext";
+import wallPaperImg from "../../assets/images/wallpaper.jpg";
+import { Box } from "@mui/system";
+import { TextField, Typography, Button } from "@mui/material";
 
 function Contact() {
   const { isLoggedIn, userProfile } = useContext(AuthContext);
   return (
-    <div className="bg-black w-full relative">
-        <div className="h-[70px] bg-black w-full" />
-        <div className="px-[25%] py-10 bg-white w-full h-[600px]">
-        <UserHeader />
-        <div className="flex flex-col md:flex-row md:justify-between">
-          <div className="md:w-[100%]">
-            <form className="bg-white p-6 rounded-lg">
-              <h2 className="text-4xl font-semibold mb-6">Contact Us</h2>
-              <div className="mb-4 text-sm">
-                <label htmlFor="name" className="block text-gray-700">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full border border-gray p-2 rounded-sm"
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
-              <div className="mb-4 text-sm">
-                <label htmlFor="email" className="block text-gray-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full border border-gray p-2 rounded-sm"
-                  placeholder="Your Email"
-                  required
-                />
-              </div>
-              <div className="mb-4 text-sm">
-                <label htmlFor="subject" className="block text-gray-700">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="w-full border border-gray p-2 rounded-sm"
-                  placeholder="Subject"
-                />
-              </div>
-              <div className="mb-4 text-sm">
-                <label htmlFor="message" className="block text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="w-full border border-gray p-2 rounded-sm"
-                  rows="4"
-                  placeholder="Your Message"
-                  required
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-red text-white py-2 rounded hover:bg-dark-red"
-                // onSubmit= {()=>handleSumit()}
+    <div className="bg-black w-full h-full flex flex-col justify-center relative">
+      <img
+        className="absolute w-full h-[820px] top-[60px] z-0 opacity-20"
+        src={wallPaperImg}
+      />
+      <UserHeader />
+      <Box
+        sx={{
+          width: "72%",
+          marginLeft: "14%",
+          minWidth: "200px",
+          typography: "body1",
+          backgroundColor: "white",
+          marginTop: "120px",
+          marginBottom: "60px",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          paddingInline: "14px",
+          height: "520px",
+          overflow: "auto",
+          zIndex: 10,
+        }}
+      >
+        <div className="w-[50%] px-[24px]">
+          <Box
+            component="form"
+            sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+          >
+            <h2 className="text-4xl font-semibold mb-4">Contact Us</h2>
+
+            <Typography
+              variant="body1"
+              marginTop="4px"
+              fontSize="14px"
+              fontWeight="bold"
+            >
+              Name
+            </Typography>
+            <TextField
+              placeholder="Your Name"
+              name="name"
+              size="small"
+              // value={signUpData.name}
+              // onChange={handleSignUpChange}
+              fullWidth
+            />
+            <Typography
+              variant="body1"
+              marginTop="4px"
+              fontSize="14px"
+              fontWeight="bold"
+            >
+              Email
+            </Typography>
+            <TextField
+              placeholder="Your Email"
+              name="email"
+              size="small"
+              // value={signUpData.name}
+              // onChange={handleSignUpChange}
+              fullWidth
+            />
+            <Typography
+              variant="body1"
+              marginTop="4px"
+              fontSize="14px"
+              fontWeight="bold"
+            >
+              Subject
+            </Typography>
+            <TextField
+              placeholder="Subject"
+              name="subject"
+              size="small"
+              // value={signUpData.name}
+              // onChange={handleSignUpChange}
+              fullWidth
+            />
+            <Typography
+              variant="body1"
+              marginTop="4px"
+              fontSize="14px"
+              fontWeight="bold"
+            >
+              Messge
+            </Typography>
+            <TextField
+              placeholder="Message"
+              name="messge"
+              size="small"
+              // value={signUpData.name}
+              // onChange={handleSignUpChange}
+              fullWidth
+            />
+            <Button
+                variant="contained"
+                sx={{ marginTop: "20px" }}
                 onClick={() =>
                   alert(
                     "The message hasn't been sent besause the function hasn't been implemented yet"
                   )
                 }
               >
-                Send Message
-              </button>
-            </form>
-          </div>
-          <div className="md:w-[100%] mt-5 md:mt-0 ">
-            <div className="text-gray p-6">
-              <h2 className="text-xl font-semibold mb-4 text-red-600">
-                Contact Information
-              </h2>
-              <p className="mb-2">
-                <strong>Address:</strong> Ki tuc xa khu B, Ho Chi Minh, VietNam
-              </p>
-              <p className="mb-2">
-                <strong>Phone:</strong> IDK
-              </p>
-              <p className="mb-4">
-                <strong>Email:</strong> 22520663@gm.uit.edu.vn
-              </p>
-            </div>
+                Sign Up
+              </Button>
+          </Box>
+        </div>
+        <div className="w-[50%]">
+          <div className="p-6 -mt-10">
+            <h2 className="text-xl font-semibold mb-4 text-red-600">
+              Contact Information
+            </h2>
+            <p className="mb-2">
+              <strong>Address:</strong> Ki tuc xa khu B, Ho Chi Minh, VietNam
+            </p>
+            <p className="mb-2">
+              <strong>Phone:</strong> IDK
+            </p>
+            <p className="mb-4">
+              <strong>Email:</strong> 22520663@gm.uit.edu.vn
+            </p>
           </div>
         </div>
-      </div>
-      <Footer className="absolute bottom-auto w-full bg-black" />
+      </Box>
+      <Footer className="w-full bg-black z-20" />
     </div>
   );
-};
+}
 
 export default Contact;

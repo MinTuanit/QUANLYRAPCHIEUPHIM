@@ -6,11 +6,35 @@ import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import PersonOffIcon from "@mui/icons-material/PersonOff";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import { Dialog, DialogContent } from "@mui/material";
 
-function SlideItem({ poster, name, duration, genre, ageLimit, nation }) {
+function SlideItem({
+  poster,
+  name,
+  duration,
+  genre,
+  ageLimit,
+  nation,
+  trailer,
+}) {
+  const exampleMovie = { trailer: "https://www.youtube.com/watch?v=TcMBFSGVi1c" };
+  const [open, setOpen] = React.useState(false);
+  const handlePlayTrailerClicked = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const navigate = useNavigate();
   const handleBuyTicketClicked = () => {
     navigate("/user/movie-detail");
+  };
+
+  const getEmbedUrl = (url) => {
+    const videoIdMatch = url.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+    const videoId = videoIdMatch ? videoIdMatch[1] : null;
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
   };
 
   return (
@@ -30,6 +54,7 @@ function SlideItem({ poster, name, duration, genre, ageLimit, nation }) {
           color="secondary"
           startIcon={<PlayCircleIcon sx={{ fontSize: 10 }} />}
           sx={{ fontSize: 12, fontWeight: 600 }}
+          onClick={handlePlayTrailerClicked}
         >
           Play Trailer
         </Button>
@@ -56,8 +81,8 @@ function SlideItem({ poster, name, duration, genre, ageLimit, nation }) {
               {duration}
             </div>
             <div>
-              <PersonOffIcon sx={{ fontSize: 16, color: "#ebd113" }} />{" "}
-              T{ageLimit}
+              <PersonOffIcon sx={{ fontSize: 16, color: "#ebd113" }} /> T
+              {ageLimit}
             </div>
             <div>
               <PublicIcon sx={{ fontSize: 16, color: "#ebd113" }} /> {nation}
@@ -65,6 +90,18 @@ function SlideItem({ poster, name, duration, genre, ageLimit, nation }) {
           </div>
         </div>
       </div>
+      <Dialog open={open} onClose={handleClose} maxWidth="lg">
+        <DialogContent>
+          <iframe
+            width="1000"
+            height="562.5"
+            src={getEmbedUrl(exampleMovie.trailer)}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Trailer"
+          ></iframe>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
