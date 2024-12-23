@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
-import UserHeader from "./Header";
-import MovieSlide from "./MovieSlide";
-import Footer from "./Footer";
+import UserHeader from "./elements/Header";
+import MovieSlide from "./elements/MovieSlide";
+import Footer from "./elements/Footer";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function SearchResult() {

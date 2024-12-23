@@ -1,6 +1,6 @@
 import { React } from "react";
-import UserHeader from "./Header";
-import Footer from "./Footer";
+import UserHeader from "./elements/Header";
+import Footer from "./elements/Footer";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import wallPaperImg from "../../assets/images/wallpaper.jpg";

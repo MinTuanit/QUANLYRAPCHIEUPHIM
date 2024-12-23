@@ -12,9 +12,9 @@ import {
   Checkbox,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import Footer from "./Footer";
+import Footer from "./elements/Footer";
 import wallPaperImg from "./../../assets/images/wallpaper.jpg";
-import UseHeader from "./Header";
+import UseHeader from "./elements/Header";
 import { AuthContext } from "../../AuthContext";
 import { useNavigate } from 'react-router-dom';
 

@@ -11,7 +11,7 @@ import Product from "./items/Product";
 import SearchImg from "../../assets/images/search.svg";
 import addImg from "../../assets/images/add.svg";
 
-const exampleProducts = [
+export const exampleProducts = [
   {
     icon: SmallPopImg,
     title: "Small Popcorn 20Oz",

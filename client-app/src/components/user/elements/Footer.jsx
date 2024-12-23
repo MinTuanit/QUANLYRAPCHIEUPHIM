@@ -5,7 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import YoutubeIcon from "@mui/icons-material/YouTube";
 import XIcon from "@mui/icons-material/X";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo.svg";
+import logo from "../../../assets/images/logo.svg";
 
 function Footer({ className }) {
   const navigate = useNavigate();

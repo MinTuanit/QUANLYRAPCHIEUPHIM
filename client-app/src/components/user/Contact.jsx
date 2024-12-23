@@ -1,6 +1,6 @@
 import { React, useContext } from "react";
-import UserHeader from "./Header";
-import Footer from "./Footer";
+import UserHeader from "./elements/Header";
+import Footer from "./elements/Footer";
 import { AuthContext } from "../../AuthContext";
 import wallPaperImg from "../../assets/images/wallpaper.jpg";
 import { Box } from "@mui/system";

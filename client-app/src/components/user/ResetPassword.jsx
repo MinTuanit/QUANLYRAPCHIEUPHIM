@@ -9,8 +9,8 @@ import {
   TextField,
   Grid,
 } from "@mui/material";
-import UserHeader from "./Header";
-import Footer from "./Footer";
+import UserHeader from "./elements/Header";
+import Footer from "./elements/Footer";
 import wallPaperImg from "../../assets/images/wallpaper.jpg";
 import LockResetIcon from '@mui/icons-material/LockReset';
 

@@ -2,11 +2,11 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { TextField, InputAdornment, Button } from "@mui/material";
-import logo from "../../assets/images/logo.svg";
-import NotificationImg from "../../assets/images/notification.svg";
-import ArrowDownImg from "../../assets/images/arrowDown.svg";
+import logo from "../../../assets/images/logo.svg";
+import NotificationImg from "../../../assets/images/notification.svg";
+import ArrowDownImg from "../../../assets/images/arrowDown.svg";
 import SearchIcon from "@mui/icons-material/Search";
-import { AuthContext } from "../../AuthContext";
+import { AuthContext } from "../../../AuthContext";
 
 function UserHeader() {
   const [searchPhrase, setSearchPhrase] = useState('');
@@ -118,7 +118,7 @@ function UserHeader() {
               variant="contained"
               size="small"
               color="secondary"
-              sx={{ borderRadius: "20px", fontSize: "13px", color: "black" }}
+              sx={{ borderRadius: "20px", fontSize: "14px", color: "black" }}
               onClick={handleLoginClick}
             >
               SignIn or SignUp

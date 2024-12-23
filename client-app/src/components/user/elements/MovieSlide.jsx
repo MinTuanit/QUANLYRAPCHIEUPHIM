@@ -1,10 +1,10 @@
 import React from "react";
-import SlideItem from "./items/SlideItem";
-import venomMovieImg from "../../assets/images/examples/venom.jpg";
-import redoneMovieImg from "../../assets/images/examples/redone.jpg";
-import dirtyanglesMovieImg from "../../assets/images/examples/dirtyangles.jpg";
-import dexterMovieImg from "../../assets/images/examples/dexter.jpg";
-import carryonMovieImg from "../../assets/images/examples/carryon.jpg";
+import SlideItem from "../items/SlideItem";
+import venomMovieImg from "../../../assets/images/examples/venom.jpg";
+import redoneMovieImg from "../../../assets/images/examples/redone.jpg";
+import dirtyanglesMovieImg from "../../../assets/images/examples/dirtyangles.jpg";
+import dexterMovieImg from "../../../assets/images/examples/dexter.jpg";
+import carryonMovieImg from "../../../assets/images/examples/carryon.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
