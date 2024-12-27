@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Route,  Routes } from "react-router-dom";
-import Header from "./Header";
+import AdminHeader from "./Header";
 import NavBar from "./NavBar";
 import AdminHome from "./Home";
 import Employees from "./Employees";
@@ -33,7 +33,7 @@ function Admin() {
 
   return (
     <div className="bg-dark-gray min-h-screen w-full relative">
-      <Header
+      <AdminHeader
         ProfileName={"Nguyen Van A"}
         ProfileRole={"Admin"}
         ProfilePic={ProfileImg}

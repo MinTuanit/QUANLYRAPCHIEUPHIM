@@ -11,13 +11,11 @@ import User from "./components/user/user";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Navigate to="/admin" />} />
-        <Route path="/admin/*" element={<Admin />} />
-        <Route path="/user/*" element={<User />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Navigate to="/user" />} />
+      <Route path="/admin/*" element={<Admin />} />
+      <Route path="/user/*" element={<User />} />
+    </Routes>
   );
 }
 

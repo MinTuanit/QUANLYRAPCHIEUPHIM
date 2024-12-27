@@ -6,7 +6,7 @@ import MessageImg from "../../assets/images/messageQuestion.svg";
 import CalendarImg from "../../assets/images/calendar.svg";
 import ArrowDownImg from "../../assets/images/arrowDown.svg";
 
-function Header({ProfileName, ProfileRole, ProfilePic, className}) {
+function AdminHeader({ProfileName, ProfileRole, ProfilePic, className}) {
   const handleCalendarClick = () => {
     // alert("Calendar clicked");
   };
@@ -52,4 +52,4 @@ function Header({ProfileName, ProfileRole, ProfilePic, className}) {
   );
 }
 
-export default Header;
+export default AdminHeader;
