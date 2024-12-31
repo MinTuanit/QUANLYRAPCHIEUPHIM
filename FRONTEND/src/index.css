@@ -260,3 +260,11 @@
 .movie-slide-container:hover .swiper-gradient-right {
   opacity: 1;
 }
+
+[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  size: 20px;
+  left: 14px;
+  opacity: 0;
+  cursor: pointer;
+}

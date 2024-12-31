@@ -7,8 +7,8 @@ function NavigationBar({ topChildren, botChildren, notificationChildren }) {
   };
 
   return (
-    <div className="fixed top-[60px] left-0 z-[999] h-[calc(100vh-60px)] w-60 flex flex-col items-start bg-black">
-      <div className="border-l-[2px] border-line-gray absolute left-60 h-full" />
+    <div className="fixed top-[50px] left-0 z-[999] h-[calc(100vh-50px)] w-[220px] flex flex-col items-start bg-black">
+      <div className="border-l-[2px] border-line-gray absolute left-[220px] h-full" />
       <div className="relative flex flex-col py-3 pl-[20px] w-full box-border overflow-hidden h-[62%] min-h-[316px]">
         {topChildren}
       </div>

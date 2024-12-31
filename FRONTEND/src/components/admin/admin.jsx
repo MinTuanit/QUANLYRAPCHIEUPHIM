@@ -3,7 +3,7 @@ import { Route,  Routes } from "react-router-dom";
 import AdminHeader from "./Header";
 import NavBar from "./NavBar";
 import AdminHome from "./Home";
-import Employees from "./Employees";
+import Users from "./Users";
 import Receipts from "./Receipts";
 import Products from "./Products";
 import Movies from "./Movies";
@@ -38,11 +38,11 @@ function Admin() {
         ProfileRole={"Admin"}
         ProfilePic={ProfileImg}
       />
-      <div className="main-layout flex flex-1 mt-[60px]">
+      <div className="main-layout flex flex-1 mt-[50px]">
         <NavBar
           topChildren={[
             <NavSelection icon={HomeImg} title="Home" to="" />,
-            <NavSelection icon={EmployeesImg} title="Employees" to="employees" />,
+            <NavSelection icon={EmployeesImg} title="Users" to="users" />,
             <NavSelection icon={MoviesImg} title="Movies" to="movies" />,
             <NavSelection icon={ProductsImg} title="Products" to="products" />,
             <NavSelection icon={TheatersImg} title="Theaters" to="theaters" />,
@@ -53,10 +53,10 @@ function Admin() {
             <NavSelection icon={SettingsImg} title="Settings" to="settings" />,
           ]}
         />
-        <div className="content w-[calc(100vw-240px)] ml-60 px-12 py-4 overflow-auto">
+        <div className="content w-[calc(100vw-220px)] ml-[220px] px-12 py-4 overflow-auto">
           <Routes>
             <Route path="" element={<AdminHome />} />
-            <Route path="employees" element={<Employees />} />
+            <Route path="users" element={<Users />} />
             <Route path="movies" element={<Movies />} />
             <Route path="products" element={<Products />} />
             <Route path="theaters" element={<Theaters />} />

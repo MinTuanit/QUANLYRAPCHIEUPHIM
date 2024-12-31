@@ -12,17 +12,17 @@ function Movies() {
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await axios.get('https://localhost:44345/api/Movies');
-        setMovies(response.data);
-      } catch (error) {
-      }
-    };
+  // useEffect(() => {
+  //   const fetchMovies = async () => {
+  //     try {
+  //       const response = await axios.get('https://localhost:44345/api/Movies');
+  //       setMovies(response.data);
+  //     } catch (error) {
+  //     }
+  //   };
 
-    fetchMovies();
-  }, []);
+  //   fetchMovies();
+  // }, []);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
