@@ -9,6 +9,7 @@ import Orders from "./Orders";
 import Products from "./Products";
 import Movies from "./Movies";
 import Rooms from "./Rooms";
+import Showtimes from "./Showtimes";
 import Settings from "./Settings";
 import NavSelection from "./NavSelection";
 import ProfileImg from "./../../assets/images/profile.png";
@@ -19,6 +20,7 @@ import ProductsImg from "./../../assets/images/products.svg";
 import TheatersImg from "./../../assets/images/theaters.svg";
 import ReceiptsImg from "./../../assets/images/receipts.svg";
 import SettingsImg from "./../../assets/images/settings.svg";
+import ShowtimesImg from "./../../assets/images/showtimes.svg";
 import Login from "./Login";
 
 function Admin() {
@@ -50,6 +52,8 @@ function Admin() {
             <NavSelection icon={ProductsImg} title="Products" to="products" isSelected={location.pathname === "/admin/products"} />,
             <NavSelection icon={TheatersImg} title="Rooms" to="rooms" isSelected={location.pathname === "/admin/rooms"} />,
             <NavSelection icon={ReceiptsImg} title="Orders" to="orders" isSelected={location.pathname === "/admin/orders"} />,
+            <NavSelection icon={ShowtimesImg} title="Showtimes" to="showtimes" isSelected={location.pathname === "/admin/showtimes"} />,
+          
           ]}
           notificationChildren={<div>Notification Content</div>}
           botChildren={[
@@ -65,8 +69,8 @@ function Admin() {
             <Route path="products" element={<Products />} />
             <Route path="rooms" element={<Rooms />} />
             <Route path="orders" element={<Orders />} />
+            <Route path="showtimes" element={<Showtimes />} />
             <Route path="settings" element={<Settings />} />
-            
           </Routes>
         </div>
         <div
