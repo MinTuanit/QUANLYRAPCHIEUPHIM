@@ -41,7 +41,7 @@ function Admin() {
       <div className="main-layout flex flex-1 mt-[60px]">
         <NavBar
           topChildren={[
-            <NavSelection icon={HomeImg} title="Home" to="/" />,
+            <NavSelection icon={HomeImg} title="Home" to="" />,
             <NavSelection icon={EmployeesImg} title="Employees" to="employees" />,
             <NavSelection icon={MoviesImg} title="Movies" to="movies" />,
             <NavSelection icon={ProductsImg} title="Products" to="products" />,
@@ -55,7 +55,7 @@ function Admin() {
         />
         <div className="content w-[calc(100vw-240px)] ml-60 px-12 py-4 overflow-auto">
           <Routes>
-            <Route path="/" element={<AdminHome />} />
+            <Route path="" element={<AdminHome />} />
             <Route path="employees" element={<Employees />} />
             <Route path="movies" element={<Movies />} />
             <Route path="products" element={<Products />} />

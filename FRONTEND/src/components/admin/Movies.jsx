@@ -1,145 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Movie from "./items/Movie";
-import agentMovieImg from "../../assets/images/examples/agentMovie.svg";
-import avatarMovieImg from "../../assets/images/examples/avatarMovie.svg";
-import jokerMovieImg from "../../assets/images/examples/jokerMovie.svg";
-import endgameMovieImg from "../../assets/images/examples/endgameMovie.svg";
-import screamMovieImg from "../../assets/images/examples/screamMovie.svg";
-import titanicMovieImg from "../../assets/images/examples/titanicMovie.svg";
-import barbieMovieImg from "../../assets/images/examples/barbieMovie.svg";
-import batmanMovieImg from "../../assets/images/examples/batmanMovie.svg";
-import shangchiMovieImg from "../../assets/images/examples/shangchiMovie.svg";
-import notimeMovieImg from "../../assets/images/examples/notimeMovie.svg";
 import SearchImg from "../../assets/images/search.svg";
 import CalendarImg from "../../assets/images/calendar.svg";
 import addImg from "../../assets/images/add.svg";
+import axios from "axios";
 
-const exampleMovies = [
-  {
-    poster: agentMovieImg,
-    name: "Agent",
-    year: "2021",
-    status: "Unknown",
-  },
-  {
-    poster: avatarMovieImg,
-    name: "Avatar",
-    year: "2009",
-    status: "Coming Soon",
-  },
-  {
-    poster: jokerMovieImg,
-    name: "Joker",
-    year: "2019",
-    status: "Now Playing",
-  },
-  {
-    poster: endgameMovieImg,
-    name: "Avengers: Endgame",
-    year: "2019",
-    status: "Now Playing",
-  },
-  {
-    poster: screamMovieImg,
-    name: "Scream",
-    year: "2022",
-    status: "Coming Soon",
-  },
-  {
-    poster: titanicMovieImg,
-    name: "Titanic",
-    year: "1997",
-    status: "Stopped",
-  },
-  {
-    poster: barbieMovieImg,
-    name: "Barbie",
-    year: "2023",
-    status: "Coming Soon",
-  },
-  {
-    poster: batmanMovieImg,
-    name: "Batman",
-    year: "2022",
-    status: "Now Playing",
-  },
-  {
-    poster: shangchiMovieImg,
-    name: "Shang-Chi: The Legend of the Ten Rings",
-    year: "2021",
-    status: "Now Playing",
-  },
-  {
-    poster: notimeMovieImg,
-    name: "No Time To Die",
-    year: "2021",
-    status: "Now Playing",
-  },{
-    poster: agentMovieImg,
-    name: "Agent",
-    year: "2021",
-    status: "Unknown",
-  },
-  {
-    poster: avatarMovieImg,
-    name: "Avatar",
-    year: "2009",
-    status: "Coming Soon",
-  },
-  {
-    poster: jokerMovieImg,
-    name: "Joker",
-    year: "2019",
-    status: "Now Playing",
-  },
-  {
-    poster: endgameMovieImg,
-    name: "Avengers: Endgame",
-    year: "2019",
-    status: "Now Playing",
-  },
-  {
-    poster: screamMovieImg,
-    name: "Scream",
-    year: "2022",
-    status: "Coming Soon",
-  },
-  {
-    poster: titanicMovieImg,
-    name: "Titanic",
-    year: "1997",
-    status: "Stopped",
-  },
-  {
-    poster: barbieMovieImg,
-    name: "Barbie",
-    year: "2023",
-    status: "Coming Soon",
-  },
-  {
-    poster: batmanMovieImg,
-    name: "Batman",
-    year: "2022",
-    status: "Now Playing",
-  },
-  {
-    poster: shangchiMovieImg,
-    name: "Shang-Chi: The Legend of the Ten Rings",
-    year: "2021",
-    status: "Now Playing",
-  },
-  {
-    poster: notimeMovieImg,
-    name: "No Time To Die",
-    year: "2021",
-    status: "Now Playing",
-  },
-];
 
 function Movies() {
   const [activeTab, setActiveTab] = useState("All");
   const [selectedDate, setSelectedDate] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await axios.get('https://localhost:44345/api/Movies');
+        setMovies(response.data);
+      } catch (error) {
+      }
+    };
+
+    fetchMovies();
+  }, []);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -161,7 +44,7 @@ function Movies() {
     setSearchTerm(event.target.value);
   };
 
-  const filteredMovies = exampleMovies.filter((movie) => {
+  const filteredMovies = movies.filter((movie) => {
     const matchesTab = activeTab === "All" || movie.status === activeTab;
     const searchTermLower = searchTerm.toLowerCase();
     const matchesSearch =
