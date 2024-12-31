@@ -10,6 +10,7 @@
   position: relative;
   z-index: 1;
 }
+
 .nav-selection::before {
   content: "";
   position: absolute;
@@ -21,12 +22,12 @@
   border-radius: 10px;
   z-index: 0;
   opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
-.nav-selection:hover::before {
+.nav-selection.selected:before {
   opacity: 0.2;
 }
+
 .nav-selection:hover img {
   filter: brightness(150%);
 }

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Theater from "./items/Theater";
+import Room from "./items/Room";
 import SearchImg from "../../assets/images/search.svg";
 import addImg from "../../assets/images/add.svg";
 
-const exampleTheaters = [
+const exampleRooms = [
   {
     id: "T01",
     status: "Ready",
@@ -126,34 +126,30 @@ const exampleTheaters = [
   },
 ];
 
-function Theaters() {
+function Rooms() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleDeleteClick = () => {
-    alert("Delete Btn clicked");
-  };
-
   const handleAddNewClick = () => {
     alert("Add New Btn clicked");
   };
 
-  const filteredTheaters = exampleTheaters.filter((theater) => {
+  const filteredRooms = exampleRooms.filter((room) => {
     const searchTermLower = searchTerm.toLowerCase();
     return (
-      (theater.id && theater.id.toLowerCase().includes(searchTermLower)) ||
-      (theater.name && theater.name.toLowerCase().includes(searchTermLower)) ||
-      (theater.location && theater.location.toLowerCase().includes(searchTermLower)) ||
-      (theater.capacity && theater.capacity.toString().includes(searchTermLower))
+      (room.id && room.id.toLowerCase().includes(searchTermLower)) ||
+      (room.name && room.name.toLowerCase().includes(searchTermLower)) ||
+      (room.location && room.location.toLowerCase().includes(searchTermLower)) ||
+      (room.capacity && room.capacity.toString().includes(searchTermLower))
     );
   });
   
   return (
-    <div className="Theaters flex flex-col h-[665px]">
-      <div className="text-40px font-medium text-light-gray">Theaters</div>
+    <div className="rooms flex flex-col h-[665px]">
+      <div className="text-40px font-medium text-light-gray">Rooms</div>
       <div className="flex flex-row items-center mt-4">
         <div className="SearchBar relative w-full max-w-[240px] h-8">
           <input
@@ -170,12 +166,6 @@ function Theaters() {
           />
         </div>
         <button
-          className="DeleteBtn ml-auto w-[114px] h-8 border-2 border-red text-red rounded-md items-center justify-center font-medium tracking-widest hover:bg-[#380005] duration-200"
-          onClick={handleDeleteClick}
-        >
-          Delete
-        </button>
-        <button
           className="AddNewBtn ml-5 w-[114px] h-8 border-2 border-red bg-red text-black rounded-md items-center justify-center font-medium tracking-widest hover:bg-dark-red hover:border-dark-red duration-200"
           onClick={handleAddNewClick}
         >
@@ -185,12 +175,12 @@ function Theaters() {
 
       <div className="content mt-[14px] w-full h-full bg-black border-[3px] border-line-gray rounded-xl pl-12 py-6 pr-4 overflow-auto">
         <div className="list grid grid-cols-5 gap-x-6 gap-y-8 max-h-[490px] py-3 overflow-y-auto">
-          {filteredTheaters.map((theater, index) => (
-            <Theater key={index} {...theater} />
+          {filteredRooms.map((room, index) => (
+            <Room key={index} room={room} />
           ))}
         </div>
       </div>
     </div>
   );
 }
-export default Theaters;
+export default Rooms;

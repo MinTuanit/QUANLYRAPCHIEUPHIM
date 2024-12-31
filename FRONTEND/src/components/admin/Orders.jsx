@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Receipt from "./items/Receipt";
+import Order from "./items/Order";
 import SearchImg from "../../assets/images/search.svg";
 import CalendarImg from "../../assets/images/calendar.svg";
 
-const exampleReceipts = [
+const exampleOrders = [
   {
     Id: 1,
     date: "2021-09-15",
@@ -238,7 +238,7 @@ const exampleReceipts = [
   },
 ];
 
-function Receipts() {
+function Orders() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -259,10 +259,6 @@ function Receipts() {
     document.getElementById("date-picker").focus();
   };
 
-  const handleDeleteClick = () => {
-    alert("Delete Btn clicked");
-  };
-
   const handleAddNewClick = () => {
     alert("Add New Btn clicked");
   };
@@ -271,24 +267,24 @@ function Receipts() {
     if (pageNumber !== "...") setCurrentPage(pageNumber);
   };
 
-  const uniqueReceipts = exampleReceipts.filter(
-    (receipt, index, self) =>
-      index === self.findIndex((r) => r.Id === receipt.Id)
+  const uniqueOrders = exampleOrders.filter(
+    (order, index, self) =>
+      index === self.findIndex((r) => r.Id === order.Id)
   );
 
-  const filteredReceipts = uniqueReceipts.filter((receipt) => {
+  const filteredOrders = uniqueOrders.filter((order) => {
     const searchTermLower = searchTerm.toLowerCase();
     return (
-      (receipt.movie && receipt.movie.toLowerCase().includes(searchTermLower)) ||
-      (receipt.customer && receipt.customer.toLowerCase().includes(searchTermLower)) ||
-      (receipt.date && receipt.date.toLowerCase().includes(searchTermLower)) ||
-      (receipt.amount && receipt.amount.toString().includes(searchTermLower))
+      (order.movie && order.movie.toLowerCase().includes(searchTermLower)) ||
+      (order.customer && order.customer.toLowerCase().includes(searchTermLower)) ||
+      (order.date && order.date.toLowerCase().includes(searchTermLower)) ||
+      (order.amount && order.amount.toString().includes(searchTermLower))
     );
   });
 
-  const totalPages = Math.ceil(filteredReceipts.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredOrders.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentReceipts = filteredReceipts.slice(
+  const currentOrders = filteredOrders.slice(
     startIndex,
     startIndex + itemsPerPage
   );
@@ -314,8 +310,8 @@ function Receipts() {
   };
 
   return (
-    <div className="receipts flex flex-col w-[calc(100vw - 336px)] min-w-[1000px] max-w-[1200px] h-[100%] relative ">
-      <div className="text-40px font-medium text-light-gray">Receipts</div>
+    <div className="orders flex flex-col w-[calc(100vw - 336px)] min-w-[1000px] max-w-[1200px] h-[100%] relative ">
+      <div className="text-40px font-medium text-light-gray">Orders</div>
       <div className="flex flex-row items-center">
         <div className="SearchBar relative w-full max-w-[240px] h-8 mt-2">
           <input
@@ -351,19 +347,13 @@ function Receipts() {
           />
         </div>
         <button
-          className="DeleteBtn mt-2 ml-auto w-[114px] h-8 border-2 border-red text-red rounded-md items-center justify-center font-medium tracking-widest hover:transform hover:-translate-y-1 transition-transform duration-200"
-          onClick={handleDeleteClick}
-        >
-          Delete
-        </button>
-        <button
           className="AddNewBtn mt-2 ml-5 w-[114px] h-8 border-2 border-red bg-red text-black rounded-md items-center justify-center font-medium tracking-widest hover:transform hover:-translate-y-1 transition-transform duration-200"
           onClick={handleAddNewClick}
         >
           Add New
         </button>
       </div>
-      <div className="receipts-list relative mt-3 h-full min-h-[568px] w-[calc(100vw - 336px)] bg-black rounded-xl overflow-auto">
+      <div className="orders-list relative mt-3 h-full min-h-[568px] w-[calc(100vw - 336px)] bg-black rounded-xl overflow-auto">
         <div className="flex flex-row items-center text-light-gray text-sm font-medium px-8 pt-3 pb-4">
           <div className="w-[14%] text-base">ID</div>
           <div className="w-[16%] text-base">Date</div>
@@ -380,8 +370,8 @@ function Receipts() {
         <div className="h-[45px] mb-[45px] ml-[10px] mr-[10px] bg-dark-gray" />
         <div className="h-[45px] mb-[45px] ml-[10px] mr-[10px] bg-dark-gray" />
         <div className="-mt-[450px] text-base">
-          {currentReceipts.map((receipt) => (
-            <Receipt key={receipt.Id} {...receipt} />
+          {currentOrders.map((order) => (
+            <Order key={order.Id} order={order} />
           ))}
         </div>
         <div className="pagination-controls absolute bottom-5 right-36 text-white">
@@ -418,4 +408,4 @@ function Receipts() {
   );
 }
 
-export default Receipts;
+export default Orders;

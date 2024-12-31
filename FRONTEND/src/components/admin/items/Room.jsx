@@ -1,7 +1,7 @@
 import React from "react";
 import infoImg from "../../../assets/images/info.svg";
 
-function Theater({ id, status, capacity, playing }) {
+function Room({ room }) {
   const handleInfoClick = () => {
     alert("Info Btn clicked");
   };
@@ -15,34 +15,34 @@ function Theater({ id, status, capacity, playing }) {
       <button className="info-button w-9 h-9 z-20" onClick={handleInfoClick}>
         <img className="size-7 ml-1" src={infoImg} alt="info" />
       </button>
-      <div className="theater-infoflex px-2 -mt-7 w-[170px] flex-col overflow-hidden">
+      <div className="room-infoflex px-2 -mt-7 w-[170px] flex-col overflow-hidden">
         <p className="flex justify-center text-[32px] font-medium text-white truncate mb-2">
-          {id}
+          {room?.id}
         </p>
         <div className="text-[14px] text-white truncate mx-2">
           <p className="h-[21px]">
             <span>Status: </span>
             
-            {(status === "Ready" && (
-              <span className="text-yellow-400">{status}</span>
+            {(room?.status === "Ready" && (
+              <span className="text-yellow-400">{room?.status}</span>
             )) ||
-              (status === "Playing" && (
-                <span className="text-green-600">{status}</span>
+              (room?.status === "Playing" && (
+                <span className="text-green-600">{room?.status}</span>
               )) ||
-              (status === "Repairing" && (
-                <span className="text-rose-700">{status}</span>
+              (room?.status === "Repairing" && (
+                <span className="text-rose-700">{room?.status}</span>
               )) ||
-              (status === "Unknown" && (
-                <span className="text-gray">{status}</span>
+              (room?.status === "Unknown" && (
+                <span className="text-gray">{room?.status}</span>
               ))}
           </p>
           <p className="h-[21px]">
             <span>Capacity: </span>
-            <span className="text-white">{capacity}</span>
+            <span className="text-white">{room?.capacity}</span>
           </p>
           <p className="movie-playing h-[42px] w-full">
             <span>Playing: </span>
-            <span className="text-gray">{playing}</span>
+            <span className="text-gray">{room?.playing}</span>
           </p>
         </div>
       </div>
@@ -56,4 +56,4 @@ function Theater({ id, status, capacity, playing }) {
   );
 }
 
-export default Theater;
+export default Room;
